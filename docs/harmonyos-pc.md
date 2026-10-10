@@ -1,5 +1,18 @@
 # 鸿蒙 PC 核心验证与复现
 
+## 2026-10-10 第二周最终复跑
+
+组长在鸿蒙 PC 原生 HiShell 中检出 `feature/baseline-integration` 提交
+`fe3261f0e8becf83018fc387416fa1be321708b8`，使用 HarmonyBrew Python 3.12.14
+运行增强后的验收入口。运行未使用 `--skip-*`，单步上限为 900 秒，结果为
+**5/5 必达步骤通过、24/24 便携核心测试通过、最小 SoC 生成通过**。工作树在运行时
+保持干净，平台记录为 `HarmonyOS-HongMeng_Kernel_1.12.0-aarch64-64bit-ELF`。
+
+`litex-sim-help` 因未安装 LiteEth 返回 `OPTIONAL_FAIL`，没有进入 Verilator；该结果仍
+属于扩展能力限制，不影响核心验收。设备原始结果位于
+`~/projects/results/week2-final-fe3261f0e/`，18 个文件通过 HDC USB 回收并核对。
+可审计摘要和关键哈希见[第二周鸿蒙证据](evidence/2026-10-10/lead-week2-harmonyos.json)。
+
 ## 2026-10-08 集成版本入口
 
 当前候选提交为 `ed0c556c32c0f52a82730dfabd40aea08a192a19`，Migen 仍固定为 `4c2ae8dfeea37f235b52acb8166f12acaaae4f7c`。最新结果、完整证据及未决事项见[移植报告](../PORTING_REPORT.md)；下方 9 月记录保留原日期和版本，不作为本次提交的验证。

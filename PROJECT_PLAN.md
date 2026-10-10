@@ -30,7 +30,7 @@ portable core tests, and export-only minimal SoC generation on HarmonyOS PC.
 
 | Owner | Branch | First-week output | Status |
 |---|---|---|---|
-| 1 - lead/integration | `feature/baseline-integration` | baseline, core flow, minimal SoC, acceptance runner | PR #2 merged; final acceptance remains with lead |
+| 1 - lead/integration | `feature/baseline-integration` | baseline, core flow, minimal SoC, acceptance runner | PR #2 merged; PR #8 native final acceptance complete 2026-10-10 |
 | 2 - environment/dependencies | `feature/harmony-environment` | environment probe, dependency matrix, setup instructions | PR #1 merged 2026-10-07 |
 | 3 - core compatibility | `feature/core-compatibility` | platform audit, minimal fixes, compatibility notes | PR #4 merged 2026-10-07 |
 | 4 - tests/documentation | `feature/tests-docs`; `feature/final-acceptance` | HarmonyOS test results, comparisons, report structure | PR #3 merged; integrated native/Windows validation complete 2026-10-08; follow-up evidence awaits review |
@@ -39,9 +39,10 @@ All feature branches submit pull requests to `port/harmonyos-pc`. The `master`
 branch remains close to upstream LiteX.
 
 Integrated candidate `ed0c556c3` passed 5/5 required steps, 24 portable tests,
-and 6 focused regressions on both Windows and native HarmonyOS PC. The native
-clean online install also passed. See the [report](PORTING_REPORT.md) for
-artifact differences, extension limits, and outstanding lead acceptance.
+and 6 focused regressions on both Windows and native HarmonyOS PC. The lead's
+current candidate `fe3261f0e` also passed the hardened 5/5 native acceptance,
+24 portable tests, and minimal SoC generation. See the
+[report](PORTING_REPORT.md) for artifact differences and extension limits.
 
 ## Risk Register
 
@@ -89,11 +90,14 @@ acceptance or only a toolchain extension.
 | 7 | Hardened the acceptance runner so command start failures and timeouts retain logs and appear in the JSON report | Complete |
 | 8 | Replayed the required acceptance checks from an empty Windows directory and compared the outputs with the saved native HarmonyOS evidence | Reference side complete |
 | 9 | Repeated minimal SoC generation from the clean environment; all eight compared artifacts matched | Complete |
-| 10 | Run the hardened acceptance command on the current commit on the HarmonyOS PC, review the resulting PR, and prepare the final demonstration | Pending native rerun |
+| 10 | Ran the hardened acceptance command on the current commit on the HarmonyOS PC, retrieved the report over HDC USB, and prepared PR #8 evidence | Complete |
 
-Current lead checkpoint: `e163f4d4b3f251951a232e286f7f97b281035d65`.
-The clean Windows replay passed 5/5 required steps and 24/24 portable tests.
+Current native lead checkpoint: `fe3261f0e8becf83018fc387416fa1be321708b8`.
+The clean Windows replay and final HarmonyOS PC run both passed 5/5 required
+steps and 24/24 portable tests. The native run generated all 9 recorded minimal
+SoC artifacts without a required-step failure.
 `litex_sim` remains an optional extension blocked at the missing LiteEth import;
 Verilator, cross-GCC, firmware, and board execution remain outside core acceptance.
-See `docs/evidence/2026-10-10/lead-week2-reference.json` for the auditable
-summary and hashes of the locally retained raw reports.
+See `docs/evidence/2026-10-10/lead-week2-reference.json` for the Windows
+reference and `docs/evidence/2026-10-10/lead-week2-harmonyos.json` for the
+auditable native summary and hashes of the locally retained raw reports.

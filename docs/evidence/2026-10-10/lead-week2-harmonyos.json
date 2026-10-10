@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-10",
+  "role": "lead-integration",
+  "tested_commit": "fe3261f0e8becf83018fc387416fa1be321708b8",
+  "source": {
+    "branch": "feature/baseline-integration",
+    "method": "git-bundle-clone-over-hdc-usb",
+    "bundle_sha256": "7dfba5fe2799c93c732c3788905d3f8c937c3aeaabd4911261dd17c204b66",
+    "git_dirty": false
+  },
+  "environment": {
+    "platform": "HarmonyOS-HongMeng_Kernel_1.12.0-aarch64-64bit-ELF",
+    "release": "HongMeng Kernel 1.12.0",
+    "machine": "aarch64",
+    "python": "3.12.14",
+    "python_utf8": true,
+    "litex": "2026.4",
+    "migen": "0.9.2"
+  },
+  "acceptance": {
+    "status": "PASS",
+    "started_at_utc": "2026-10-10T12:09:07.054109+00:00",
+    "finished_at_utc": "2026-10-10T12:09:41.976051+00:00",
+    "required_passed": 5,
+    "required_total": 5,
+    "portable_tests_passed": 24,
+    "minimal_soc_generated": true,
+    "step_timeout_seconds": 900,
+    "skip_options_used": false,
+    "optional_failures": [
+      {
+        "step": "litex-sim-help",
+        "reason": "ModuleNotFoundError: No module named 'liteeth'",
+        "classification": "extension"
+      }
+    ]
+  },
+  "minimal_soc": {
+    "build_name": "minimal_soc",
+    "sys_clk_freq": 1000000,
+    "artifact_count": 9,
+    "manifest_sha256": "8211582138984f3c8ffa56db967038d0927750590090c0cf8608027e08ff25a1",
+    "verilog_sha256": "eaf70938397b0df4f09991d78c2d874aef4026a40791274a77507342e6024e4b",
+    "csr_json_sha256": "9c70bff4cacfccf0acd723d1f707f719fba87dcbd11606ea2219a62755c58a40"
+  },
+  "evidence_hashes": {
+    "acceptance_report_sha256": "5bb21661aee882dab774ce8e1cceb21cc6cff39139f1115aaea69c1fe08d21e3",
+    "environment_sha256": "45e94022f191a150ac087314697bcc00ba52076e00151b69bf46b8899b2f19e6",
+    "portable_tests_log_sha256": "2ade5cfed288bf6092681f0faa8dcabeb7a232be72e9e6304e149eda98e0e4d7",
+    "minimal_soc_log_sha256": "921c1bb3daf435b10f38905b6abbcc9371fd58d179555261964b857dff32c915"
+  },
+  "risk_classification": {
+    "core_blockers": [],
+    "extension_limits": [
+      "LiteEth is not installed, so litex_sim help does not reach Verilator.",
+      "Verilator and RISC-V GCC remain unverified on the native HarmonyOS PC.",
+      "BIOS, firmware, FPGA synthesis, programming, and board boot are outside core acceptance."
+    ]
+  },
+  "raw_evidence": {
+    "device_location": "~/projects/results/week2-final-fe3261f0e",
+    "retrieved_location": "outputs/harmonyos-week2-final-fe3261f0e/week2-final-fe3261f0e",
+    "committed": false,
+    "transport": "HDC USB; 18 files retrieved"
+  }
+}
