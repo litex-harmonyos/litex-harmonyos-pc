@@ -79,4 +79,21 @@ acceptance or only a toolchain extension.
 - [x] Environment setup and matrix submitted in merged PR #1; native evidence linked from the validation report.
 - [ ] All four work items exist as GitHub Issues with owners (Issues disabled; lead must decide whether PR tracking is sufficient).
 - [x] Baseline pull request is merged into `port/harmonyos-pc` (PR #2).
-- [ ] Lead records personal clean-directory replay, accepts comparison exceptions and final scope, and reviews the follow-up validation PR.
+- [x] Lead records personal clean-directory replay, accepts comparison exceptions and final scope, and reviews the follow-up validation PR.
+
+## Second-Week Status
+
+| Day | Lead/integration result | Status |
+|---|---|---|
+| 6 | Synced `feature/baseline-integration` to the green `port/harmonyos-pc` baseline and reviewed the integrated compatibility work | Complete |
+| 7 | Hardened the acceptance runner so command start failures and timeouts retain logs and appear in the JSON report | Complete |
+| 8 | Replayed the required acceptance checks from an empty Windows directory and compared the outputs with the saved native HarmonyOS evidence | Reference side complete |
+| 9 | Repeated minimal SoC generation from the clean environment; all eight compared artifacts matched | Complete |
+| 10 | Run the hardened acceptance command on the current commit on the HarmonyOS PC, review the resulting PR, and prepare the final demonstration | Pending native rerun |
+
+Current lead checkpoint: `e163f4d4b3f251951a232e286f7f97b281035d65`.
+The clean Windows replay passed 5/5 required steps and 24/24 portable tests.
+`litex_sim` remains an optional extension blocked at the missing LiteEth import;
+Verilator, cross-GCC, firmware, and board execution remain outside core acceptance.
+See `docs/evidence/2026-10-10/lead-week2-reference.json` for the auditable
+summary and hashes of the locally retained raw reports.

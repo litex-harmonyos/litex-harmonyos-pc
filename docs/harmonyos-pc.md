@@ -87,6 +87,18 @@ sh scripts/setup_harmonyos.sh && \
 python scripts/run_acceptance.py --output-dir <新的专用输出目录>
 ```
 
+第二周最终复跑应使用增强后的报告入口，并为单步设置充足上限：
+
+```sh
+PYTHONUTF8=1 .venv-litex/bin/python scripts/run_acceptance.py \
+  --output-dir ../results/week2-final \
+  --step-timeout 900
+```
+
+验收结束后必须保存 `acceptance-report.json`、`environment.json`、`logs/` 和
+`minimal-soc/`。核心通过条件为 `required_passed == required_total`；
+`litex-sim-help` 的 `OPTIONAL_FAIL` 单独记录，不得伪装为核心失败或核心通过。
+
 本次两端均设置 `PYTHONUTF8=1`，且没有使用 `--skip-*`。本次输出位置：
 
 - Windows：仓库内 `build/acceptance-windows-20260928/`。

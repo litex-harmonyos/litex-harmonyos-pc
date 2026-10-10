@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-10",
+  "role": "lead-integration",
+  "base_commit": "8b51b42296c42af942cb3195a5aa1dd1799146c9",
+  "tested_commit": "e163f4d4b3f251951a232e286f7f97b281035d65",
+  "source": {
+    "method": "git-bundle-clone-from-empty-directory",
+    "bundle_sha256": "28e8a24ae529b3c148c377ff2ecb951df401ce4cf32ebb1e0ee740a7e385f780",
+    "litex_worktree_clean_after_run": true,
+    "migen_worktree_clean_after_run": true
+  },
+  "environment": {
+    "system": "Windows 11",
+    "machine": "AMD64",
+    "python": "3.12.10",
+    "python_utf8": true,
+    "litex": "2026.4",
+    "migen": "0.9.2",
+    "migen_commit": "4c2ae8dfeea37f235b52acb8166f12acaaae4f7c"
+  },
+  "acceptance": {
+    "status": "PASS",
+    "required_passed": 5,
+    "required_total": 5,
+    "portable_tests_passed": 24,
+    "minimal_soc_generated": true,
+    "optional_failures": [
+      {
+        "step": "litex-sim-help",
+        "reason": "ModuleNotFoundError: No module named 'liteeth'",
+        "classification": "extension"
+      }
+    ],
+    "report_sha256": "507d31e8cd6a7412acaf9e141c03a5f81b71ed718d82ca680b6918e468db7b79"
+  },
+  "repeatability": {
+    "status": "MATCH",
+    "compared_files": 8,
+    "report_sha256": "ad08fe72d4301d7ddd3533928cf6eeb14770200b79da27d71a58c8fce634f8d5"
+  },
+  "saved_harmonyos_comparison": {
+    "candidate_date": "2026-10-08",
+    "candidate_commit": "ed0c556c32c0f52a82730dfabd40aea08a192a19",
+    "strict_status": "DIFFERENT",
+    "compared_files": 8,
+    "differences": [
+      "Generated provenance headers contain different LiteX commits.",
+      "The Verilog hierarchy comment uses ASCII connectors on Windows and Unicode connectors on HarmonyOS."
+    ],
+    "behavioral_difference_found": false,
+    "strict_rules_relaxed": false,
+    "report_sha256": "8ea642df57c055f9968914f19ca1d40cce567e2242cfcf2d0e529b9d884e7cc3"
+  },
+  "risk_classification": {
+    "core_blockers": [],
+    "pending_core_evidence": [
+      "Run the hardened acceptance entry point on the current commit on the native HarmonyOS PC."
+    ],
+    "extension_limits": [
+      "LiteEth is not installed, so litex_sim help does not reach Verilator.",
+      "Verilator and RISC-V GCC remain unverified on the native HarmonyOS PC.",
+      "BIOS, firmware, FPGA synthesis, programming, and board boot are outside core acceptance."
+    ]
+  },
+  "raw_evidence": {
+    "location": "build/week2-lead-replay-20261010/results",
+    "committed": false,
+    "note": "Raw logs and generated artifacts remain local; this committed summary records their hashes and conclusions."
+  }
+}
