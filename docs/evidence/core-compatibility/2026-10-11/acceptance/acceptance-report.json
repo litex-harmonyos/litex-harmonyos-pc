@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "started_at_utc": "2026-10-11T02:24:26.117137+00:00",
+  "finished_at_utc": "2026-10-11T02:24:37.181833+00:00",
+  "passed": 5,
+  "total": 6,
+  "required_passed": 5,
+  "required_total": 5,
+  "failed_required_steps": [],
+  "failed_optional_steps": [
+    "litex-sim-help"
+  ],
+  "environment": {
+    "captured_at_utc": "2026-10-11T02:24:26.117137+00:00",
+    "command": [
+      "<VENV>/bin/python",
+      "<WORKTREE>/scripts/run_acceptance.py",
+      "--output-dir",
+      "<RESULTS>/acceptance",
+      "--step-timeout",
+      "900.0"
+    ],
+    "working_directory": "<WORKTREE>",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "machine": "arm64",
+    "python": "3.12.10 (main, May 30 2025, 05:53:56) [Clang 20.1.4 ]",
+    "python_executable": "<VENV>/bin/python",
+    "default_encoding": "utf-8",
+    "filesystem_encoding": "utf-8",
+    "preferred_encoding": "utf-8",
+    "litex_version": "2026.4",
+    "migen_version": "0.9.2",
+    "git_branch": "feature/core-compatibility",
+    "git_commit": "ea85022cfcc26fcd322d4548f95e4e103b148aa3",
+    "git_dirty": true,
+    "environment": {
+      "PYTHONUTF8": "1",
+      "PYTHONIOENCODING": "utf-8",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "TMPDIR": "<TEMP_ROOT>/",
+      "TEMP": null,
+      "TMP": null
+    }
+  },
+  "steps": [
+    {
+      "name": "pip-check",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "command_text": "<VENV>/bin/python -m pip check",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:26.140105+00:00",
+      "finished_at_utc": "2026-10-11T02:24:26.230199+00:00",
+      "duration_seconds": 0.09,
+      "log": "<RESULTS>/acceptance/logs/pip-check.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "imports",
+      "command": [
+        "<VENV>/bin/python",
+        "-c",
+        "import litex, migen; print('LiteX and Migen import OK')"
+      ],
+      "command_text": "<VENV>/bin/python -c 'import litex, migen; print('\"'\"'LiteX and Migen import OK'\"'\"')'",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:26.230228+00:00",
+      "finished_at_utc": "2026-10-11T02:24:26.282203+00:00",
+      "duration_seconds": 0.052,
+      "log": "<RESULTS>/acceptance/logs/imports.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "litex-cli-help",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "litex.tools.litex_client",
+        "--help"
+      ],
+      "command_text": "<VENV>/bin/python -m litex.tools.litex_client --help",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:26.282222+00:00",
+      "finished_at_utc": "2026-10-11T02:24:26.331176+00:00",
+      "duration_seconds": 0.049,
+      "log": "<RESULTS>/acceptance/logs/litex-cli-help.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "litex-sim-help",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "litex.tools.litex_sim",
+        "--help"
+      ],
+      "command_text": "<VENV>/bin/python -m litex.tools.litex_sim --help",
+      "returncode": 1,
+      "started_at_utc": "2026-10-11T02:24:26.331197+00:00",
+      "finished_at_utc": "2026-10-11T02:24:26.556599+00:00",
+      "duration_seconds": 0.225,
+      "log": "<RESULTS>/acceptance/logs/litex-sim-help.log",
+      "status": "OPTIONAL_FAIL",
+      "required": false,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "portable-core-tests",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test.cores.test_code_8b10b",
+        "test.cores.test_ecc",
+        "test.soc.test_export"
+      ],
+      "command_text": "<VENV>/bin/python -m unittest -v test.cores.test_code_8b10b test.cores.test_ecc test.soc.test_export",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:26.556617+00:00",
+      "finished_at_utc": "2026-10-11T02:24:36.895663+00:00",
+      "duration_seconds": 10.339,
+      "log": "<RESULTS>/acceptance/logs/portable-core-tests.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "minimal-soc",
+      "command": [
+        "<VENV>/bin/python",
+        "<WORKTREE>/examples/minimal_soc_baseline.py",
+        "--output-dir",
+        "<RESULTS>/acceptance/minimal-soc",
+        "--clean"
+      ],
+      "command_text": "<VENV>/bin/python <WORKTREE>/examples/minimal_soc_baseline.py --output-dir <RESULTS>/acceptance/minimal-soc --clean",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:36.895683+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.181809+00:00",
+      "duration_seconds": 0.286,
+      "log": "<RESULTS>/acceptance/logs/minimal-soc.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    }
+  ]
+}

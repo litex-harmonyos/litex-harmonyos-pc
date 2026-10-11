@@ -1,0 +1,309 @@
+{
+  "started_at_utc": "2026-10-11T02:24:25.098771+00:00",
+  "operator": "Codex executing member-3 Mac checks",
+  "scope": "supplementary",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.10 (main, May 30 2025, 05:53:56) [Clang 20.1.4 ]",
+  "executable": "<VENV>/bin/python",
+  "source_commit": "ea85022cfcc26fcd322d4548f95e4e103b148aa3",
+  "source_status": "?? scripts/run_core_compatibility.py\n?? test/test_run_core_compatibility.py",
+  "steps": [
+    {
+      "name": "environment-probe",
+      "command": [
+        "<VENV>/bin/python",
+        "<WORKTREE>/scripts/check_environment.py",
+        "--json",
+        "<RESULTS>/environment-probe.json"
+      ],
+      "command_text": "<VENV>/bin/python <WORKTREE>/scripts/check_environment.py --json <RESULTS>/environment-probe.json",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:25.161181+00:00",
+      "finished_at_utc": "2026-10-11T02:24:26.088475+00:00",
+      "duration_seconds": 0.927,
+      "log": "<RESULTS>/logs/environment-probe.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "core-acceptance",
+      "command": [
+        "<VENV>/bin/python",
+        "<WORKTREE>/scripts/run_acceptance.py",
+        "--output-dir",
+        "<RESULTS>/acceptance",
+        "--step-timeout",
+        "900.0"
+      ],
+      "command_text": "<VENV>/bin/python <WORKTREE>/scripts/run_acceptance.py --output-dir <RESULTS>/acceptance --step-timeout 900.0",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:26.088516+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.187791+00:00",
+      "duration_seconds": 11.099,
+      "log": "<RESULTS>/logs/core-acceptance.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "litex_client-help",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "litex.tools.litex_client",
+        "--help"
+      ],
+      "command_text": "<VENV>/bin/python -m litex.tools.litex_client --help",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:37.187812+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.236798+00:00",
+      "duration_seconds": 0.049,
+      "log": "<RESULTS>/logs/litex_client-help.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "litex_term-help",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "litex.tools.litex_term",
+        "--help"
+      ],
+      "command_text": "<VENV>/bin/python -m litex.tools.litex_term --help",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:37.236819+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.297265+00:00",
+      "duration_seconds": 0.06,
+      "log": "<RESULTS>/logs/litex_term-help.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "litex_soc_gen-help",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "litex.tools.litex_soc_gen",
+        "--help"
+      ],
+      "command_text": "<VENV>/bin/python -m litex.tools.litex_soc_gen --help",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:37.297284+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.468404+00:00",
+      "duration_seconds": 0.171,
+      "log": "<RESULTS>/logs/litex_soc_gen-help.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "litex_periph_gen-help",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "litex.tools.litex_periph_gen",
+        "--help"
+      ],
+      "command_text": "<VENV>/bin/python -m litex.tools.litex_periph_gen --help",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:37.468424+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.639340+00:00",
+      "duration_seconds": 0.171,
+      "log": "<RESULTS>/logs/litex_periph_gen-help.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "module-provenance",
+      "command": [
+        "<VENV>/bin/python",
+        "-c",
+        "import json,litex,migen,litex.gen,litex.build,litex.soc; print(json.dumps({'litex':litex.__file__,'migen':migen.__file__}))"
+      ],
+      "command_text": "<VENV>/bin/python -c 'import json,litex,migen,litex.gen,litex.build,litex.soc; print(json.dumps({'\"'\"'litex'\"'\"':litex.__file__,'\"'\"'migen'\"'\"':migen.__file__}))'",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:37.639370+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.686204+00:00",
+      "duration_seconds": 0.047,
+      "log": "<RESULTS>/logs/module-provenance.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "compatibility-regressions",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test.build.test_generic_platform_toolchain.TestGenericToolchain",
+        "test.soc.test_builder.TestBuilderPaths",
+        "test.soc.test_builder.TestBuilderGeneratedFiles.test_generate_includes_without_bios_writes_runtime_headers_only",
+        "test.soc.test_builder.TestBuilderGeneratedFiles.test_generate_csr_map_writes_default_csv_and_json_exports",
+        "test.soc.test_builder.TestBuilderGeneratedFiles.test_variables_contents_remaps_replay_support_paths",
+        "test.hdl.test_migen_compat",
+        "test.interconnect.test_stream.TestStream.test_byte_count",
+        "test.interconnect.test_stream.TestStream.test_byte_mask",
+        "test.build.test_pmod.TestPmod"
+      ],
+      "command_text": "<VENV>/bin/python -m unittest -v test.build.test_generic_platform_toolchain.TestGenericToolchain test.soc.test_builder.TestBuilderPaths test.soc.test_builder.TestBuilderGeneratedFiles.test_generate_includes_without_bios_writes_runtime_headers_only test.soc.test_builder.TestBuilderGeneratedFiles.test_generate_csr_map_writes_default_csv_and_json_exports test.soc.test_builder.TestBuilderGeneratedFiles.test_variables_contents_remaps_replay_support_paths test.hdl.test_migen_compat test.interconnect.test_stream.TestStream.test_byte_count test.interconnect.test_stream.TestStream.test_byte_mask test.build.test_pmod.TestPmod",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:37.686236+00:00",
+      "finished_at_utc": "2026-10-11T02:24:37.990741+00:00",
+      "duration_seconds": 0.304,
+      "log": "<RESULTS>/logs/compatibility-regressions.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "host-probe",
+      "command": [
+        "<VENV>/bin/python",
+        "<WORKTREE>/docs/evidence/core-compatibility/2026-09-30/host_probe.py"
+      ],
+      "command_text": "<VENV>/bin/python <WORKTREE>/docs/evidence/core-compatibility/2026-09-30/host_probe.py",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:37.990777+00:00",
+      "finished_at_utc": "2026-10-11T02:24:38.144483+00:00",
+      "duration_seconds": 0.153,
+      "log": "<RESULTS>/logs/host-probe.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "harmonyos-example",
+      "command": [
+        "<VENV>/bin/python",
+        "<WORKTREE>/examples/harmonyos_minimal_soc.py",
+        "--output-dir",
+        "<RESULTS>/中文 空格",
+        "--clean"
+      ],
+      "command_text": "<VENV>/bin/python <WORKTREE>/examples/harmonyos_minimal_soc.py --output-dir '<RESULTS>/中文 空格' --clean",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:38.144535+00:00",
+      "finished_at_utc": "2026-10-11T02:24:38.387891+00:00",
+      "duration_seconds": 0.243,
+      "log": "<RESULTS>/logs/harmonyos-example.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "wrapper-comparison",
+      "command": [
+        "<VENV>/bin/python",
+        "<WORKTREE>/scripts/compare_baseline.py",
+        "<RESULTS>/acceptance/minimal-soc",
+        "<RESULTS>/中文 空格",
+        "--output",
+        "<RESULTS>/wrapper-comparison.json"
+      ],
+      "command_text": "<VENV>/bin/python <WORKTREE>/scripts/compare_baseline.py <RESULTS>/acceptance/minimal-soc '<RESULTS>/中文 空格' --output <RESULTS>/wrapper-comparison.json",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:38.387946+00:00",
+      "finished_at_utc": "2026-10-11T02:24:38.412441+00:00",
+      "duration_seconds": 0.024,
+      "log": "<RESULTS>/logs/wrapper-comparison.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    },
+    {
+      "name": "packages",
+      "command": [
+        "<VENV>/bin/python",
+        "-m",
+        "pip",
+        "freeze",
+        "--all"
+      ],
+      "command_text": "<VENV>/bin/python -m pip freeze --all",
+      "returncode": 0,
+      "started_at_utc": "2026-10-11T02:24:38.412460+00:00",
+      "finished_at_utc": "2026-10-11T02:24:38.542416+00:00",
+      "duration_seconds": 0.13,
+      "log": "<RESULTS>/logs/packages.log",
+      "status": "PASS",
+      "required": true,
+      "timed_out": false,
+      "spawn_error": null
+    }
+  ],
+  "acceptance_complete": true,
+  "host_probe_complete": true,
+  "firmware": {
+    "status": "CONDITIONS_MISSING",
+    "tools": {
+      "make": {
+        "path": "/usr/bin/make",
+        "returncode": 0,
+        "stdout": "GNU Make 3.81\nCopyright (C) 2006  Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A\nPARTICULAR PURPOSE.\n\nThis program built for i386-apple-darwin11.3.0\n",
+        "stderr": ""
+      },
+      "meson": {
+        "path": null
+      },
+      "ninja": {
+        "path": null
+      },
+      "riscv64-unknown-elf-gcc": {
+        "path": null
+      },
+      "riscv64-elf-gcc": {
+        "path": null
+      },
+      "riscv32-unknown-elf-gcc": {
+        "path": null
+      }
+    },
+    "packages": {
+      "pythondata_software_picolibc": null,
+      "pythondata_software_compiler_rt": null,
+      "pythondata_cpu_picorv32": null
+    },
+    "missing": [
+      "meson",
+      "ninja",
+      "RISC-V GCC",
+      "pythondata_software_picolibc",
+      "pythondata_software_compiler_rt",
+      "pythondata_cpu_picorv32"
+    ],
+    "compiled": false,
+    "note": "PATH/package probe only; firmware compilation is a separate conditional task."
+  },
+  "serial": {
+    "name": "serial_enumeration_only",
+    "status": "PASS",
+    "required": false,
+    "detail": {
+      "backend": "serial.tools.list_ports_osx",
+      "count": 3,
+      "port_opened": false
+    }
+  },
+  "native_execution": false,
+  "status": "PASS",
+  "week2_completion": "native-validation-pending",
+  "finished_at_utc": "2026-10-11T02:24:38.565645+00:00"
+}

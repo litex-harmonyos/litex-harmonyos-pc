@@ -1,0 +1,499 @@
+{
+  "tool": "litex-harmonyos-check_environment",
+  "generated": "2026-10-11 10:24:26",
+  "mode": "fast",
+  "elapsed_s": 0.89,
+  "entries": [
+    {
+      "section": "系统",
+      "name": "platform.system",
+      "status": "INFO",
+      "detail": "Darwin",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "platform.release",
+      "status": "INFO",
+      "detail": "25.5.0",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "platform.version",
+      "status": "INFO",
+      "detail": "Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:22 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8132",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "platform.machine",
+      "status": "INFO",
+      "detail": "arm64",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "platform.processor",
+      "status": "INFO",
+      "detail": "arm",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "sys.platform",
+      "status": "INFO",
+      "detail": "darwin",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "/etc/os-release",
+      "status": "INFO",
+      "detail": "不存在（非标准 Linux/OpenHarmony 布局）",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "鸿蒙特征识别",
+      "status": "WARN",
+      "detail": "未命中 OpenHarmony/HarmonyOS 关键字；若当前确为鸿蒙 PC，请将上方原始值发回群里确认检测规则（勿改用虚拟机/容器验证）",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "SHELL 环境变量",
+      "status": "INFO",
+      "detail": "/bin/zsh",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "TERM 环境变量",
+      "status": "INFO",
+      "detail": "dumb",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "TERM_PROGRAM",
+      "status": "INFO",
+      "detail": "未设置",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "终端 isatty(stdin/stdout)",
+      "status": "INFO",
+      "detail": "stdin=False stdout=False",
+      "required": false
+    },
+    {
+      "section": "系统",
+      "name": "终端尺寸",
+      "status": "INFO",
+      "detail": "无法获取（非交互终端）",
+      "required": false
+    },
+    {
+      "section": "Python",
+      "name": "解释器版本 (需 >=3.7)",
+      "status": "OK",
+      "detail": "3.12.10 (CPython)",
+      "required": true
+    },
+    {
+      "section": "Python",
+      "name": "sys.executable",
+      "status": "INFO",
+      "detail": "<VENV>/bin/python",
+      "required": false
+    },
+    {
+      "section": "Python",
+      "name": "是否虚拟环境",
+      "status": "INFO",
+      "detail": "是 (<VENV>)",
+      "required": false
+    },
+    {
+      "section": "Python",
+      "name": "PEP 668 外部管理标记",
+      "status": "WARN",
+      "detail": "存在 <PYTHON_RUNTIME>/cpython-3.12.10-macos-aarch64-none/lib/python3.12/EXTERNALLY-MANAGED：系统 pip 受保护，必须使用 venv（litex_setup.py 会直接拒绝安装）",
+      "required": false
+    },
+    {
+      "section": "Python",
+      "name": "pip 可用性",
+      "status": "OK",
+      "detail": "pip 26.2.1 from <VENV>/lib/python3.12/site-packages/pip (python 3.12)",
+      "required": true
+    },
+    {
+      "section": "Python",
+      "name": "venv 模块可导入",
+      "status": "OK",
+      "detail": "已内置",
+      "required": false
+    },
+    {
+      "section": "Python",
+      "name": "site-packages 路径",
+      "status": "INFO",
+      "detail": "<VENV>/lib/python3.12/site-packages",
+      "required": false
+    },
+    {
+      "section": "Python",
+      "name": "可执行脚本目录",
+      "status": "INFO",
+      "detail": "<VENV>/bin",
+      "required": false
+    },
+    {
+      "section": "编码与字符集",
+      "name": "文件系统编码",
+      "status": "INFO",
+      "detail": "utf-8",
+      "required": false
+    },
+    {
+      "section": "编码与字符集",
+      "name": "区域首选编码",
+      "status": "INFO",
+      "detail": "utf-8",
+      "required": false
+    },
+    {
+      "section": "编码与字符集",
+      "name": "stdout 编码",
+      "status": "INFO",
+      "detail": "utf-8",
+      "required": false
+    },
+    {
+      "section": "编码与字符集",
+      "name": "控制台中文输出",
+      "status": "OK",
+      "detail": "stdout 编码可表示中文与全角符号（未直接打印，避免污染报告）",
+      "required": false
+    },
+    {
+      "section": "编码与字符集",
+      "name": "UTF-8 文件名读写",
+      "status": "OK",
+      "detail": "创建/读取中文名文件成功",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "路径分隔符",
+      "status": "INFO",
+      "detail": "os.sep='/' os.pathsep=':'",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "临时目录",
+      "status": "INFO",
+      "detail": "<TEMP_ROOT>",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "HOME",
+      "status": "INFO",
+      "detail": "<USER_HOME>",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "临时目录写入",
+      "status": "OK",
+      "detail": "<TEMP_ROOT>",
+      "required": true
+    },
+    {
+      "section": "文件系统能力",
+      "name": "文件名大小写",
+      "status": "INFO",
+      "detail": "不敏感（Windows 行为）",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "符号链接",
+      "status": "OK",
+      "detail": "可用",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "硬链接",
+      "status": "OK",
+      "detail": "可用",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "可执行位 (chmod +x 后可直接运行)",
+      "status": "OK",
+      "detail": "LXEXEC-OK",
+      "required": true
+    },
+    {
+      "section": "文件系统能力",
+      "name": "255 字节文件名",
+      "status": "OK",
+      "detail": "255 字节 ASCII 组件名可创建",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "长路径（嵌套 8 层 + 180 字符文件名）",
+      "status": "OK",
+      "detail": "总长 301 字符",
+      "required": false
+    },
+    {
+      "section": "文件系统能力",
+      "name": "HOME 目录可写",
+      "status": "OK",
+      "detail": "<USER_HOME>",
+      "required": false
+    },
+    {
+      "section": "子进程能力",
+      "name": "基本子进程 (python -c)",
+      "status": "OK",
+      "detail": "LXSUB-OK",
+      "required": true
+    },
+    {
+      "section": "子进程能力",
+      "name": "环境变量继承",
+      "status": "OK",
+      "detail": "1",
+      "required": false
+    },
+    {
+      "section": "子进程能力",
+      "name": "工作目录指定 (cwd 参数)",
+      "status": "OK",
+      "detail": "/private<TEMP_ROOT>",
+      "required": false
+    },
+    {
+      "section": "子进程能力",
+      "name": "shell 子进程 (sh -c)",
+      "status": "OK",
+      "detail": "LXSH-OK",
+      "required": false
+    },
+    {
+      "section": "Git",
+      "name": "git 可执行文件",
+      "status": "OK",
+      "detail": "git version 2.50.0 (/opt/homebrew/bin/git)",
+      "required": true
+    },
+    {
+      "section": "Git",
+      "name": "git 远端连通性",
+      "status": "SKIP",
+      "detail": "--full 模式检测",
+      "required": false
+    },
+    {
+      "section": "网络连通性",
+      "name": "HTTP(S) 访问",
+      "status": "SKIP",
+      "detail": "--full 模式检测",
+      "required": true
+    },
+    {
+      "section": "外部工具",
+      "name": "C/C++ 编译器/cc",
+      "status": "INFO",
+      "detail": "/usr/bin/cc",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "C/C++ 编译器/gcc",
+      "status": "INFO",
+      "detail": "/usr/bin/gcc",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "C/C++ 编译器/clang",
+      "status": "INFO",
+      "detail": "/usr/bin/clang",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "构建系统/make",
+      "status": "INFO",
+      "detail": "/usr/bin/make",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "构建系统/ninja",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（litex_sim / 固件））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "构建系统/meson",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（litex_sim / 固件））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "构建系统/cmake",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（可选））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "仿真 / HDL 工具/verilator",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（litex_sim））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "仿真 / HDL 工具/iverilog",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（可选仿真））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "仿真 / HDL 工具/yosys",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（FPGA 综合，非首期））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "RISC-V 交叉工具链/riscv64-unknown-elf-gcc",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（BIOS/固件编译））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "RISC-V 交叉工具链/riscv64-elf-gcc",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（BIOS/固件编译））",
+      "required": false
+    },
+    {
+      "section": "外部工具",
+      "name": "RISC-V 交叉工具链/riscv32-unknown-elf-gcc",
+      "status": "SKIP",
+      "detail": "未安装（扩展验收（BIOS/固件编译））",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "migen",
+      "status": "OK",
+      "detail": "0.9.2 —— HDL 生成引擎（litex/gen 全面依赖）",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "packaging",
+      "status": "OK",
+      "detail": "26.3 —— builder.py 版本比较（litex/soc/integration/builder.py:22）",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "pyserial",
+      "status": "OK",
+      "detail": "3.5 —— litex_term / UART 远程（litex/tools/litex_term.py:16）",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "requests",
+      "status": "OK",
+      "detail": "2.34.2 —— 远程烧写懒加载（litex/build/generic_programmer.py:52）",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "setuptools",
+      "status": "OK",
+      "detail": "84.0.0 —— 安装/构建（litex_setup.py:628）",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "wheel",
+      "status": "OK",
+      "detail": "0.48.0 —— 安装/构建（litex_setup.py:630）",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "pexpect",
+      "status": "WARN",
+      "detail": "未安装（构建/扩展：交互式终端自动化（extras: develop）；安装流程完成后本项应变为 OK）",
+      "required": false
+    },
+    {
+      "section": "Python 依赖",
+      "name": "meson",
+      "status": "WARN",
+      "detail": "未安装（构建/扩展：litex_sim C 仿真构建（扩展验收）；安装流程完成后本项应变为 OK）",
+      "required": false
+    },
+    {
+      "section": "仓库基线",
+      "name": "仓库根目录",
+      "status": "INFO",
+      "detail": "<WORKTREE>",
+      "required": false
+    },
+    {
+      "section": "仓库基线",
+      "name": "当前 commit",
+      "status": "INFO",
+      "detail": "ea85022cfcc26fcd322d4548f95e4e103b148aa3 (feature/core-compatibility)",
+      "required": false
+    },
+    {
+      "section": "仓库基线",
+      "name": "工作区状态",
+      "status": "INFO",
+      "detail": "有未提交修改（2 行）",
+      "required": false
+    },
+    {
+      "section": "仓库基线",
+      "name": "LiteX 版本 (setup.py)",
+      "status": "INFO",
+      "detail": "2026.04",
+      "required": false
+    },
+    {
+      "section": "仓库基线",
+      "name": "Migen 基线 SHA1 (litex_repos.py)",
+      "status": "INFO",
+      "detail": "4c2ae8dfeea37f235b52acb8166f12acaaae4f7c",
+      "required": false
+    }
+  ],
+  "blockers": []
+}

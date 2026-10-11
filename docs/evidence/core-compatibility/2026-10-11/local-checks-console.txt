@@ -1,0 +1,49 @@
+
+== environment-probe ==
+<VENV>/bin/python <WORKTREE>/scripts/check_environment.py --json <RESULTS>/environment-probe.json
+PASS (0.93s), log: <RESULTS>/logs/environment-probe.log
+
+== core-acceptance ==
+<VENV>/bin/python <WORKTREE>/scripts/run_acceptance.py --output-dir <RESULTS>/acceptance --step-timeout 900.0
+PASS (11.10s), log: <RESULTS>/logs/core-acceptance.log
+
+== litex_client-help ==
+<VENV>/bin/python -m litex.tools.litex_client --help
+PASS (0.05s), log: <RESULTS>/logs/litex_client-help.log
+
+== litex_term-help ==
+<VENV>/bin/python -m litex.tools.litex_term --help
+PASS (0.06s), log: <RESULTS>/logs/litex_term-help.log
+
+== litex_soc_gen-help ==
+<VENV>/bin/python -m litex.tools.litex_soc_gen --help
+PASS (0.17s), log: <RESULTS>/logs/litex_soc_gen-help.log
+
+== litex_periph_gen-help ==
+<VENV>/bin/python -m litex.tools.litex_periph_gen --help
+PASS (0.17s), log: <RESULTS>/logs/litex_periph_gen-help.log
+
+== module-provenance ==
+<VENV>/bin/python -c 'import json,litex,migen,litex.gen,litex.build,litex.soc; print(json.dumps({'"'"'litex'"'"':litex.__file__,'"'"'migen'"'"':migen.__file__}))'
+PASS (0.05s), log: <RESULTS>/logs/module-provenance.log
+
+== compatibility-regressions ==
+<VENV>/bin/python -m unittest -v test.build.test_generic_platform_toolchain.TestGenericToolchain test.soc.test_builder.TestBuilderPaths test.soc.test_builder.TestBuilderGeneratedFiles.test_generate_includes_without_bios_writes_runtime_headers_only test.soc.test_builder.TestBuilderGeneratedFiles.test_generate_csr_map_writes_default_csv_and_json_exports test.soc.test_builder.TestBuilderGeneratedFiles.test_variables_contents_remaps_replay_support_paths test.hdl.test_migen_compat test.interconnect.test_stream.TestStream.test_byte_count test.interconnect.test_stream.TestStream.test_byte_mask test.build.test_pmod.TestPmod
+PASS (0.30s), log: <RESULTS>/logs/compatibility-regressions.log
+
+== host-probe ==
+<VENV>/bin/python <WORKTREE>/docs/evidence/core-compatibility/2026-09-30/host_probe.py
+PASS (0.15s), log: <RESULTS>/logs/host-probe.log
+
+== harmonyos-example ==
+<VENV>/bin/python <WORKTREE>/examples/harmonyos_minimal_soc.py --output-dir '<RESULTS>/中文 空格' --clean
+PASS (0.24s), log: <RESULTS>/logs/harmonyos-example.log
+
+== wrapper-comparison ==
+<VENV>/bin/python <WORKTREE>/scripts/compare_baseline.py <RESULTS>/acceptance/minimal-soc '<RESULTS>/中文 空格' --output <RESULTS>/wrapper-comparison.json
+PASS (0.02s), log: <RESULTS>/logs/wrapper-comparison.log
+
+== packages ==
+<VENV>/bin/python -m pip freeze --all
+PASS (0.13s), log: <RESULTS>/logs/packages.log
+supplementary: PASS; completion: native-validation-pending

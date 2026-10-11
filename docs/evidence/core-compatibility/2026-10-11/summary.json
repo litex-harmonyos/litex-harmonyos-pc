@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-11",
+  "member": 3,
+  "scope": "macOS supplementary",
+  "python": "3.12.10",
+  "source_base": "ea85022cfcc26fcd322d4548f95e4e103b148aa3",
+  "tested_input": "base commit plus run_core_compatibility.py and its tests; hashes in source-sha256.json",
+  "migen_commit": "4c2ae8dfeea37f235b52acb8166f12acaaae4f7c",
+  "native_execution": false,
+  "week2_completion": "native-validation-pending",
+  "required_acceptance": {
+    "passed": 5,
+    "total": 5
+  },
+  "portable_core_tests": 24,
+  "compatibility_regressions": 30,
+  "cli_help": 4,
+  "host_checks": 5,
+  "reporting_tests": 17,
+  "new_runner_tests": 5,
+  "same_session_wrapper_comparison": {
+    "matched": 8,
+    "cross_platform": false
+  },
+  "firmware_compiled": false,
+  "local_firmware_probe": "CONDITIONS_MISSING",
+  "optional_simulation": "OPTIONAL_FAIL: LiteEth absent; not Verilator execution",
+  "blockers": [
+    "No HarmonyOS PC available, confirmed by user",
+    "Current native firmware conditions not probed",
+    "Independent peer validation and lead review pending"
+  ],
+  "prior_evidence_audit": {
+    "2026-10-08_bundle_files_verified": 95,
+    "latest_lead_18_file_bundle_retrieved": false
+  },
+  "raw_archive": {
+    "local_path": "<LOCAL_REPOSITORY>/build/member3-week2-20261011.zip",
+    "sha256": "8970fb668e21b0ec1eeaec87822181054654dc7d25147ff88eb32dbe94e43e46",
+    "hashed_entries": 58
+  }
+}

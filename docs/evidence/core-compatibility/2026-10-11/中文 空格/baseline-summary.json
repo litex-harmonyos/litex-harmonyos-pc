@@ -1,0 +1,52 @@
+{
+  "build_name": "minimal_soc",
+  "sys_clk_freq": 1000000,
+  "output_dir": "<RESULTS>/\u4e2d\u6587 \u7a7a\u683c",
+  "artifacts": [
+    {
+      "path": "csr.csv",
+      "bytes": 1468,
+      "sha256": "48b75833bcc1e6c11cd21055fcb57dfbe96b54baaf07790b2213a7eddfcc00cd"
+    },
+    {
+      "path": "csr.json",
+      "bytes": 2252,
+      "sha256": "9c70bff4cacfccf0acd723d1f707f719fba87dcbd11606ea2219a62755c58a40"
+    },
+    {
+      "path": "gateware/minimal_soc.v",
+      "bytes": 23817,
+      "sha256": "e73081d6baf5a240cd41e1991704e53fecae878d95739f20d991527cc01e7cef"
+    },
+    {
+      "path": "gateware/minimal_soc_mem.init",
+      "bytes": 84,
+      "sha256": "7f78d197eeb021d4cc51516fe765b6553e5a4992c41caaffe6f83aefc778251e"
+    },
+    {
+      "path": "litex.log",
+      "bytes": 5076,
+      "sha256": "fa895c33524a71cd2197e0382b8b3e2a7cf4b9659c160ed08fae8b8a679b88ca"
+    },
+    {
+      "path": "software/include/generated/csr.h",
+      "bytes": 4886,
+      "sha256": "3328412b8d9a09c7d353c2500c9dfff8e3998a39757288d370041fc6ccb6c82e"
+    },
+    {
+      "path": "software/include/generated/git.h",
+      "bytes": 323,
+      "sha256": "b4df8646b7f1659dcd5191fa936dda308165002fa16bd3d693122b328a44b037"
+    },
+    {
+      "path": "software/include/generated/mem.h",
+      "bytes": 616,
+      "sha256": "4ce35f3e675fc2cefab0350fa56ffe5fe2605b4ab55d8328b5300dd9419bfc74"
+    },
+    {
+      "path": "software/include/generated/soc.h",
+      "bytes": 1786,
+      "sha256": "b6cc3c23580a0b58a2514996478641c5e8fd0132142b521d96968e4a16658eff"
+    }
+  ]
+}

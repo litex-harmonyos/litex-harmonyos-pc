@@ -1,0 +1,73 @@
+{
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "system": "Darwin",
+  "sys_platform": "darwin",
+  "os_name": "posix",
+  "python": "3.12.10 (main, May 30 2025, 05:53:56) [Clang 20.1.4 ]",
+  "executable": "<VENV>/bin/python",
+  "locale_encoding": "utf-8",
+  "utf8_mode": 1,
+  "temp_directory": "<TEMP_ROOT>",
+  "litex_source": "<WORKTREE>/litex/__init__.py",
+  "migen_source": "<VENV>/lib/python3.12/site-packages/migen/__init__.py",
+  "packages": {
+    "litex": "2026.4",
+    "migen": "0.9.2",
+    "pyserial": "3.5"
+  },
+  "checks": [
+    {
+      "name": "vcd_tempfile_and_cleanup",
+      "status": "PASS",
+      "required": true,
+      "detail": {
+        "paths": [
+          "relative.vcd",
+          "<TEMP_ROOT>/litex-core-vcd-fwi_0ks8/中文 空格/trace.vcd"
+        ],
+        "temp_root": "<TEMP_ROOT>",
+        "handles_closed": true,
+        "cleanup": true
+      }
+    },
+    {
+      "name": "builder_unicode_path_and_encoding",
+      "status": "PASS",
+      "required": true,
+      "detail": {
+        "nested_unicode_path": true,
+        "utf8_roundtrip": true,
+        "unchanged_file_not_rewritten": true
+      }
+    },
+    {
+      "name": "builder_write_permission",
+      "status": "PASS",
+      "required": true,
+      "detail": {
+        "exercised": true,
+        "permission_error_propagated": true
+      }
+    },
+    {
+      "name": "filtered_subprocess_argv_and_exit",
+      "status": "PASS",
+      "required": true,
+      "detail": {
+        "argv_preserved": true,
+        "unicode_stdout": true,
+        "child_returncode": 7
+      }
+    },
+    {
+      "name": "serial_enumeration_only",
+      "status": "PASS",
+      "required": false,
+      "detail": {
+        "backend": "serial.tools.list_ports_osx",
+        "count": 3,
+        "port_opened": false
+      }
+    }
+  ]
+}

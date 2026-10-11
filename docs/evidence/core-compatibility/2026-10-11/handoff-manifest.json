@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-11",
+  "status": "PREPARED_AND_RESTORED_ON_MAC",
+  "native_execution": false,
+  "source_commits": {
+    "litex": "a4929180c36004a272a2da2ed7dcec704cc24cc3",
+    "migen": "4c2ae8dfeea37f235b52acb8166f12acaaae4f7c"
+  },
+  "archive": {
+    "local_path": "<LOCAL_REPOSITORY>/build/member3-week2-handoff-20261011.zip",
+    "sha256": "5251a76c323c11abf8b50dee813769d3b717f6cb594fb4ff0a4ea1a6b570d0d9",
+    "bytes": 32432732
+  },
+  "package_files": {
+    "README.md": "a684a38d9ac880778fda0a89803ccca6a43cfbe5230f4eacc50c8fc62006c964",
+    "constraints.txt": "29b2f55a1528855b5b80443bf2b99046269ef872902675f1a3827dfbc8bbaf0e",
+    "litex.bundle": "4693af09b6b25856fbe5bc4837026210fdcc9cbf1e7a88c4c9e3dbb71340272f",
+    "migen.bundle": "34ce3a13433c4a384e2b1d5d557088e0c1bf51ac09dde6b463632639aab656ce"
+  },
+  "recovery": {
+    "empty_directory_clone": true,
+    "both_commits_verified": true,
+    "tested_source_hashes_verified": 9,
+    "core_tests_rerun": false,
+    "reason": "Only bundle integrity/recovery checked; core code unchanged since the recorded passing run"
+  },
+  "network_note": "Source bundles restore without remote clone; Python dependency installation and full environment network probes still require network."
+}

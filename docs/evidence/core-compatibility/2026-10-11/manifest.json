@@ -1,0 +1,214 @@
+{
+  "raw_archive": {
+    "local_path": "<LOCAL_REPOSITORY>/build/member3-week2-20261011.zip",
+    "sha256": "8970fb668e21b0ec1eeaec87822181054654dc7d25147ff88eb32dbe94e43e46",
+    "hashed_entries": 58
+  },
+  "public_copies": {
+    "acceptance/acceptance-report.json": {
+      "sha256": "030229a1d8e0679ab7af6a58abe16c19a495c0d5ae7fe1834d7a309e1e74b76c",
+      "raw_entry": "results/acceptance/acceptance-report.json",
+      "raw_sha256": "8c10421776946f91a44d0afd31126a970ce13c3acd6e27d3e7d55bf42ecfeba8"
+    },
+    "acceptance/environment.json": {
+      "sha256": "eb296dbdcc6f210bbff3f7454cf263f22c5d7ac3e430429053ff626c614adbd8",
+      "raw_entry": "results/acceptance/environment.json",
+      "raw_sha256": "79089e3326cf4787c40673141c0fa07ab61fc4bdd1c65fba836cb50a97110cea"
+    },
+    "acceptance/logs/imports.log.txt": {
+      "sha256": "6ed5e05fcfd906ebf3efd052132818dc5936db12df6f7a67e22f48d3d8eba61b",
+      "raw_entry": "results/acceptance/logs/imports.log",
+      "raw_sha256": "6ed5e05fcfd906ebf3efd052132818dc5936db12df6f7a67e22f48d3d8eba61b"
+    },
+    "acceptance/logs/litex-cli-help.log.txt": {
+      "sha256": "4392029624502b29f404fd864ecafa0a3a38877b908586e391cd048a7f751f0e",
+      "raw_entry": "results/acceptance/logs/litex-cli-help.log",
+      "raw_sha256": "4392029624502b29f404fd864ecafa0a3a38877b908586e391cd048a7f751f0e"
+    },
+    "acceptance/logs/litex-sim-help.log.txt": {
+      "sha256": "7bba29163a4632030330870c286d349971c3e3ed48c144fe8178d7ab2d6d9899",
+      "raw_entry": "results/acceptance/logs/litex-sim-help.log",
+      "raw_sha256": "8af6513ee6b940861a577c425e6e9eee09debf03b56071d2bc25ea0ce81c5516"
+    },
+    "acceptance/logs/minimal-soc.log.txt": {
+      "sha256": "3b51237e99263c4f4f0ae40e9e28feb82ee878c6c970d6c2abb5f5e61b1ffbbd",
+      "raw_entry": "results/acceptance/logs/minimal-soc.log",
+      "raw_sha256": "5d5bb06954d5060ef372aaa26c04bdf2ccdb9d33e06aecb5aaf740c7e4ac1429"
+    },
+    "acceptance/logs/pip-check.log.txt": {
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "raw_entry": "results/acceptance/logs/pip-check.log",
+      "raw_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    "acceptance/logs/portable-core-tests.log.txt": {
+      "sha256": "17401ca48b073afb52dec0bca8e68c07203c1e8d3e6cff3a84e016acd9d61bd8",
+      "raw_entry": "results/acceptance/logs/portable-core-tests.log",
+      "raw_sha256": "17401ca48b073afb52dec0bca8e68c07203c1e8d3e6cff3a84e016acd9d61bd8"
+    },
+    "acceptance/minimal-soc/baseline-summary.json": {
+      "sha256": "35707cfaea09b4f33250e19894bc35131dd4789f777fc5de0dd4b2fbadebf9a9",
+      "raw_entry": "results/acceptance/minimal-soc/baseline-summary.json",
+      "raw_sha256": "a759207963f7b8afd77e2c9db0177f4a3b97557ea6c8f3958978fa0578f0036d"
+    },
+    "acceptance/minimal-soc/csr.json": {
+      "sha256": "9c70bff4cacfccf0acd723d1f707f719fba87dcbd11606ea2219a62755c58a40",
+      "raw_entry": "results/acceptance/minimal-soc/csr.json",
+      "raw_sha256": "9c70bff4cacfccf0acd723d1f707f719fba87dcbd11606ea2219a62755c58a40"
+    },
+    "acceptance/minimal-soc/litex.log.txt": {
+      "sha256": "6895a1f0fe50ed7e9f8dd2ee6be1afb2921315f8cf9d8ca7417bda0d7f903ee3",
+      "raw_entry": "results/acceptance/minimal-soc/litex.log",
+      "raw_sha256": "bc8cab620bcc979fe054a0d8abd95fadb72cdd509f9d35025bc5f8532e6abc88"
+    },
+    "environment-probe.json": {
+      "sha256": "02702fffb43a39ac80466510c1d5fcb5a16dd545146f5c3ed223d3ed125b13d2",
+      "raw_entry": "results/environment-probe.json",
+      "raw_sha256": "73db20b4dec7838b86e59a0ad1315527879a2c01424a80c32573a3270c386a90"
+    },
+    "file-sha256.json": {
+      "sha256": "9ee934636e0188b37371aa53ed8090f37a91ccf9881e8a94d9056660ebea9adc",
+      "raw_entry": "results/file-sha256.json",
+      "raw_sha256": "9ee934636e0188b37371aa53ed8090f37a91ccf9881e8a94d9056660ebea9adc"
+    },
+    "logs/compatibility-regressions.log.txt": {
+      "sha256": "80cbf8b11218adeafae5914e5ac971f7f3d26d75ce519b6f17e2be8ab27b007a",
+      "raw_entry": "results/logs/compatibility-regressions.log",
+      "raw_sha256": "80cbf8b11218adeafae5914e5ac971f7f3d26d75ce519b6f17e2be8ab27b007a"
+    },
+    "logs/core-acceptance.log.txt": {
+      "sha256": "f2ee98192a88d405e40836ce3a8b8ff099533cceabd99a1653c82bcbecc04df2",
+      "raw_entry": "results/logs/core-acceptance.log",
+      "raw_sha256": "e557cf57586e09d6d4c2d7211d0b7cc008cdb6694436f60cdb5b48a3f424f4b1"
+    },
+    "logs/environment-probe.log.txt": {
+      "sha256": "194c0afe8e2e168949588afcce7528409bc4ad8ff2a86b445adaaa48a168b2fa",
+      "raw_entry": "results/logs/environment-probe.log",
+      "raw_sha256": "1ca49b07eaac6de1c9d2707ac7ad87a795b4489e37595970a5848bfdceb3189b"
+    },
+    "logs/harmonyos-example.log.txt": {
+      "sha256": "30dd04591f5cdddbeb2220fd5a354d71d4dd910c65b8d94142c1e99a5aeca0f1",
+      "raw_entry": "results/logs/harmonyos-example.log",
+      "raw_sha256": "f486f71940d8277cf8f5c50df484f98b4ed3f3107f8be241e52ac4ce511b83f2"
+    },
+    "logs/host-probe.log.txt": {
+      "sha256": "3c850274775b7ebcb1f9d9630f891065c71b581be60846d6d644c519a144df53",
+      "raw_entry": "results/logs/host-probe.log",
+      "raw_sha256": "86fb67a94852ef59fd1c30abeca61fe37d8bbe489f4a1f0f88226458d312a78f"
+    },
+    "logs/litex_client-help.log.txt": {
+      "sha256": "4392029624502b29f404fd864ecafa0a3a38877b908586e391cd048a7f751f0e",
+      "raw_entry": "results/logs/litex_client-help.log",
+      "raw_sha256": "4392029624502b29f404fd864ecafa0a3a38877b908586e391cd048a7f751f0e"
+    },
+    "logs/litex_periph_gen-help.log.txt": {
+      "sha256": "85e80d0a39a96d511a0d1f24e30429a0c983c028d7e8bb17bd52d6e956a34b30",
+      "raw_entry": "results/logs/litex_periph_gen-help.log",
+      "raw_sha256": "85e80d0a39a96d511a0d1f24e30429a0c983c028d7e8bb17bd52d6e956a34b30"
+    },
+    "logs/litex_soc_gen-help.log.txt": {
+      "sha256": "2b886b69050e5573f23e02072c015c111e56b42a7c138d6ee0e83cf2d729ee14",
+      "raw_entry": "results/logs/litex_soc_gen-help.log",
+      "raw_sha256": "2b886b69050e5573f23e02072c015c111e56b42a7c138d6ee0e83cf2d729ee14"
+    },
+    "logs/litex_term-help.log.txt": {
+      "sha256": "7fbafd8e19ef8040cccd5220d7ddb1d37264691aa3a1a6f90df0a9a97eecc2a5",
+      "raw_entry": "results/logs/litex_term-help.log",
+      "raw_sha256": "7fbafd8e19ef8040cccd5220d7ddb1d37264691aa3a1a6f90df0a9a97eecc2a5"
+    },
+    "logs/module-provenance.log.txt": {
+      "sha256": "9845545653a73a5f09e430b716110f37308fc3bbb55b55595f66eec9c6a18110",
+      "raw_entry": "results/logs/module-provenance.log",
+      "raw_sha256": "2c2c591fa31839d84e027a0c25e19ee1416e52e7b0708cdccb20c3178d4af201"
+    },
+    "logs/packages.log.txt": {
+      "sha256": "d446b711fc5789d90aa57ce7719684e79c44b650740f2405995aebb9162106bd",
+      "raw_entry": "results/logs/packages.log",
+      "raw_sha256": "d62d37e346013da2d2703f7941bd8841c9d9061a909f741825974746b3def0c0"
+    },
+    "logs/wrapper-comparison.log.txt": {
+      "sha256": "7c49098e35a27523857f3ae0c3c6cce0cfb94744b5862dbcbdeb9a1b330ccaaf",
+      "raw_entry": "results/logs/wrapper-comparison.log",
+      "raw_sha256": "572c21b47fc48f182ea84cccb5eaa8d03cdf83cd0596c1abb775939cf96a890b"
+    },
+    "report.json": {
+      "sha256": "fd87223142071c29ec1c76d5079c3116edbc23ed9fa2ad1bcb4319e4caea9b04",
+      "raw_entry": "results/report.json",
+      "raw_sha256": "b9c0cc0f838332183380b74955d03aaf5c3bcd87baf7c601891f4c335a77538c"
+    },
+    "source-audit.json": {
+      "sha256": "09ba431f0d97a94ca79de1a428af2412cbcf9e711a4abe0dcd138d7ab0a2cdab",
+      "raw_entry": "results/source-audit.json",
+      "raw_sha256": "09ba431f0d97a94ca79de1a428af2412cbcf9e711a4abe0dcd138d7ab0a2cdab"
+    },
+    "source-sha256.json": {
+      "sha256": "ed2e35a4ef7be343dc2f4fbf88d31373b0dc8e31f8f594775fbabd009c6f5010",
+      "raw_entry": "results/source-sha256.json",
+      "raw_sha256": "ed2e35a4ef7be343dc2f4fbf88d31373b0dc8e31f8f594775fbabd009c6f5010"
+    },
+    "wrapper-comparison.json": {
+      "sha256": "5a04cf7038e17e5d52de45e73372758445f69d3ca75a0291e96ba1718b8cfd76",
+      "raw_entry": "results/wrapper-comparison.json",
+      "raw_sha256": "cd5a93660824def26f2880f952b7586183a5eab190e4e46e3289f9f312082607"
+    },
+    "中文 空格/baseline-summary.json": {
+      "sha256": "0118c5a7bc7fa3a4815d4182901ed9c645b1b54c7b4039220e5ad5040edb5c49",
+      "raw_entry": "results/中文 空格/baseline-summary.json",
+      "raw_sha256": "de703ef0df76b6de6603d46e0ad26f1f62b46f9eee1a51fedde9e6d7ec347f5d"
+    },
+    "中文 空格/csr.json": {
+      "sha256": "9c70bff4cacfccf0acd723d1f707f719fba87dcbd11606ea2219a62755c58a40",
+      "raw_entry": "results/中文 空格/csr.json",
+      "raw_sha256": "9c70bff4cacfccf0acd723d1f707f719fba87dcbd11606ea2219a62755c58a40"
+    },
+    "中文 空格/litex.log.txt": {
+      "sha256": "46c450212bcc4e8614cda2208218a368133fe0d9bb2069102c823425878adc8f",
+      "raw_entry": "results/中文 空格/litex.log",
+      "raw_sha256": "fa895c33524a71cd2197e0382b8b3e2a7cf4b9659c160ed08fae8b8a679b88ca"
+    },
+    "constraints.txt": {
+      "sha256": "29b2f55a1528855b5b80443bf2b99046269ef872902675f1a3827dfbc8bbaf0e",
+      "raw_entry": "preparation/constraints.txt",
+      "raw_sha256": "29b2f55a1528855b5b80443bf2b99046269ef872902675f1a3827dfbc8bbaf0e"
+    },
+    "reporting-tests.txt": {
+      "sha256": "88e0cffba85734922de05805cf37957f7f33e266f73a8c5ab3e4899ec7087058",
+      "raw_entry": "preparation/reporting-tests.txt",
+      "raw_sha256": "0f1de8a121db494881349ac0c736e6ad4dfaed767400be01ba55e0c22be92876"
+    },
+    "local-checks-console.txt": {
+      "sha256": "824efe73ca1d51ccc086668a1fc600a174e8f80eaebf26da978bb026906d5267",
+      "raw_entry": "preparation/local-checks-console.txt",
+      "raw_sha256": "5a19391c538e0fe3d7b8bd64e11d6b150fdcc269766cb9e830394097441195e6"
+    },
+    "summary.json": {
+      "sha256": "e0b7d0f1578c2a1eca1709672b8c69ae3665a9c428eed6c3f62f9d91a7b826fc",
+      "raw_entry": null,
+      "note": "Derived summary, not original execution output"
+    }
+  },
+  "redaction_placeholders": [
+    "<WORKTREE>",
+    "<USER_HOME>",
+    "<RESULTS>",
+    "<VENV>",
+    "<PYTHON_RUNTIME>",
+    "<MIGEN_SOURCE>",
+    "/private<TEMP_ROOT>",
+    "<TEMP_ROOT>"
+  ],
+  "note": "Public hashes cover redacted copies. Execution file-sha256.json covers original result files before report.json/manifest/source audit were added. ZIP archive-sha256.json covers all archived raw files except itself.",
+  "supplemental_public_files": {
+    "ci-summary.json": {
+      "sha256": "b893d15286c74437541ce810d938e5abfaffd40f211fd22ae70d5af354187220",
+      "note": "2026-10-11 closeout; separate from original local run archive"
+    },
+    "ci-excerpts.log.txt": {
+      "sha256": "e11e657daf2b0a4d8f1fcdc20fbc69a49f155de7094404b5009f75bf25ecf611",
+      "note": "2026-10-11 closeout; separate from original local run archive"
+    },
+    "handoff-manifest.json": {
+      "sha256": "03a06d1b879ad47cd326af4bff3c12a3d5db8fdd5de9cfb4f4492a7911095fdb",
+      "note": "2026-10-11 closeout; separate from original local run archive"
+    }
+  }
+}
