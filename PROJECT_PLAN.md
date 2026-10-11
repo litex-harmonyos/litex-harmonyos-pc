@@ -32,17 +32,19 @@ portable core tests, and export-only minimal SoC generation on HarmonyOS PC.
 |---|---|---|---|
 | 1 - lead/integration | `feature/baseline-integration` | baseline, core flow, minimal SoC, acceptance runner | PR #2 merged; PR #8 native final acceptance complete 2026-10-10 |
 | 2 - environment/dependencies | `feature/harmony-environment` | environment probe, dependency matrix, setup instructions | PR #1 merged 2026-10-07 |
-| 3 - core compatibility | `feature/core-compatibility` | platform audit, minimal fixes, compatibility notes | PR #4 merged; PR #9 source 2cd7d5eb4 passed all four CI jobs; native r2 core/CLI/generation and 26 reporting tests passed; denied-write fixture unavailable and correctly reported BLOCKED; firmware conditions missing; independent Windows review 26/26 passed |
-| 4 - tests/documentation | `feature/tests-docs`; `feature/final-acceptance` | HarmonyOS test results, comparisons, report structure | PR #3 merged; integrated native/Windows validation complete 2026-10-08; follow-up evidence awaits review |
+| 3 - core compatibility | `feature/core-compatibility` | platform audit, minimal fixes, compatibility notes | PR #4 and #9 merged; native r2 core/CLI/generation and 26 reporting tests passed; denied-write fixture correctly reported BLOCKED; independent Windows review 26/26 passed |
+| 4 - tests/documentation | `feature/tests-docs`; `feature/final-acceptance` | HarmonyOS test results, comparisons, report structure | PR #3 and #5 merged; integrated native/Windows evidence approved |
 
 All feature branches submit pull requests to `port/harmonyos-pc`. The `master`
 branch remains close to upstream LiteX.
 
 Integrated candidate `ed0c556c3` passed 5/5 required steps, 24 portable tests,
 and 6 focused regressions on both Windows and native HarmonyOS PC. The lead's
-current candidate `fe3261f0e` also passed the hardened 5/5 native acceptance,
-24 portable tests, and minimal SoC generation. See the
-[report](PORTING_REPORT.md) for artifact differences and extension limits.
+native checkpoint `fe3261f0e` also passed the hardened 5/5 native acceptance,
+24 portable tests, and minimal SoC generation. All follow-up work was merged at
+technical baseline `b2ef07da0`, whose four CI jobs passed. See the
+[delivery record](DELIVERY.md) and [report](PORTING_REPORT.md) for evidence,
+artifact differences, and extension limits.
 
 ## Risk Register
 
@@ -78,7 +80,7 @@ acceptance or only a toolchain extension.
 - [x] Automated acceptance runner is implemented and verified.
 - [x] Four GitHub Issue templates are ready for the project members.
 - [x] Environment setup and matrix submitted in merged PR #1; native evidence linked from the validation report.
-- [ ] All four work items exist as GitHub Issues with owners (Issues disabled; lead must decide whether PR tracking is sufficient).
+- [x] All four work items have owners and review history. Because repository Issues are disabled, the lead accepts the branch/plan/PR #1-#9 records as the tracking substitute.
 - [x] Baseline pull request is merged into `port/harmonyos-pc` (PR #2).
 - [x] Lead records personal clean-directory replay, accepts comparison exceptions and final scope, and reviews the follow-up validation PR.
 
@@ -101,3 +103,11 @@ Verilator, cross-GCC, firmware, and board execution remain outside core acceptan
 See `docs/evidence/2026-10-10/lead-week2-reference.json` for the Windows
 reference and `docs/evidence/2026-10-10/lead-week2-harmonyos.json` for the
 auditable native summary and hashes of the locally retained raw reports.
+
+## Final Closure
+
+- [x] PR #1 through #9 are merged into `port/harmonyos-pc`.
+- [x] All remote feature-branch commits are contained in the integration branch.
+- [x] Technical baseline `b2ef07da0da7cd24519a027a0af7ad9318ea9366` passed all four CI jobs.
+- [x] The lead accepted the recorded Windows/HarmonyOS comparison exception and extension scope.
+- [x] Final delivery coordinates, evidence index, limitations, and submission steps are recorded in [DELIVERY.md](DELIVERY.md).
