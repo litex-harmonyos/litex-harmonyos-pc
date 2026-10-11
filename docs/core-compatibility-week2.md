@@ -3,12 +3,12 @@
 日期：2026-10-11。工作分支：feature/core-compatibility；集成输入：`ea85022cfcc26fcd322d4548f95e4e103b148aa3`。
 Migen 固定为 `4c2ae8dfeea37f235b52acb8166f12acaaae4f7c`，不能用同版本号的 PyPI 包替代。
 
-## 当前结论与未完成项
+## 当前结论与限制
 
 本轮完成已有兼容修改复核、本机 CPython 3.12.10 旁证、一次性验证入口及证据整理；没有发现需要新增 LiteX 核心补丁的失败。
-**已取得三号独立鸿蒙 PC 原生会话；核心生成通过，权限测试前提受限，新验证器复测与成员交叉验证待完成。**
+**已取得三号独立鸿蒙 PC 原生会话和 r2 复测；核心生成与报告测试通过，权限测试前提受限并按 BLOCKED 保留。**
 早期无设备/虚拟机不可测试的状态已被用户提供的 鸿蒙 PC 原生结果替代。10 月 11 日原会话绑定 a4929180c，报告 FAIL；诊断确认 chmod(0500) 后实际权限仍为 02771，普通 Python 与 Builder 都可写，未证明核心绕过权限。详见 [首次原生证据与修正说明](evidence/core-compatibility/2026-10-11/native-r1/README.md)。
-新版宿主检查先测普通写入前提，无法构造拒绝写入时为 BLOCKED，不算权限验证通过；原始失败及历史脚本保留。26 项保护性测试与更新执行器已在 Mac 旁证通过，原设备复测待回传。
+新版宿主检查先测普通写入前提，无法构造拒绝写入时为 BLOCKED，不算权限验证通过；原始失败及历史脚本保留。原设备 r2 已在提交 `2cd7d5eb4` 上复测，26 项保护性测试通过，执行器按设计返回 BLOCKED。脱敏结论见 [r2 摘要](evidence/core-compatibility/2026-10-11/native-r2/README.md)。
 
 ## 对应六项任务
 
@@ -18,8 +18,8 @@ Migen 固定为 `4c2ae8dfeea37f235b52acb8166f12acaaae4f7c`，不能用同版本�
 | 最小 SoC 及 Verilog/CSR/头文件 | 本机直接运行鸿蒙示例入口；与基准 8 个文件比较 MATCH | 三号原生生成及同次 8 MATCH 已通过 |
 | 工具链可用时 BIOS/最小固件 | 收集本机工具/包可见性；核对原生已提交的条件不足记录 | 真机 CONDITIONS_MISSING；条件性未编译 |
 | 按四号回归修复差异和错误 | 复核已合入接口修复和路径断言；去重后的 30 项定向回归通过 | 本轮无新增核心修复依据 |
-| 每个兼容修改的测试、注释与说明 | 下表给出已有修改、用途、提交及测试；当前报告/宿主保护性测试共 26 项 | Mac 26/26；原生待复跑 |
-| PR 提交集成分支 | 本轮代码、说明及脱敏证据向 port/harmonyos-pc 提交草稿 PR | 原生/交叉验证后再审核合并 |
+| 每个兼容修改的测试、注释与说明 | 下表给出已有修改、用途、提交及测试；当前报告/宿主保护性测试共 26 项 | Mac、原生 r2、Windows 交叉复核均为 26/26 |
+| PR 提交集成分支 | 本轮代码、说明及脱敏证据向 port/harmonyos-pc 提交 PR | CI 与交叉复核通过，待最终合并 |
 
 ## 已合入修改的复核
 
@@ -58,22 +58,22 @@ Migen 固定为 `4c2ae8dfeea37f235b52acb8166f12acaaae4f7c`，不能用同版本�
 
 ## 不依赖设备的收尾
 
-[PR #9](https://github.com/litex-harmonyos/litex-harmonyos-pc/pull/9) 已提交为草稿，源码提交 `a4929180c36004a272a2da2ed7dcec704cc24cc3`。
-该源码的 [四组 Ubuntu CI](https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38105516202) 全部成功；实际检出的是与集成分支合并的测试提交 `d2ac98407fa72264d001ad74f95d4ffd028169e3`。
+[PR #9](https://github.com/litex-harmonyos/litex-harmonyos-pc/pull/9) 的当前源码提交为 `2cd7d5eb43b73eab0fce3ea751e78e6d36494601`。
+该源码的 [四组 Ubuntu CI](https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38123938496) 全部成功。早期 a492 源码 CI 与摘录仍作为历史记录保留。
 
-| CI 组 | pytest 主分组结果 |
+| CI 组 | 最新提交结果 |
 | --- | --- |
-| 1 | 372 passed、1 skipped；另有独立 QEMU 协同仿真步骤成功 |
-| 2 | 402 passed |
-| 3 | 367 passed、1 skipped |
-| 4 | 382 passed、1 skipped |
+| 1 | 成功，包含独立 QEMU 协同仿真步骤 |
+| 2 | 成功 |
+| 3 | 成功 |
+| 4 | 成功 |
 
-新增验证器 5 项测试在组 2/3/4 的日志中明确全部通过。CI 使用 Ubuntu 22.04 和主解释器 Python 3.9，不能写成与鸿蒙 Python 版本一致的端到端比较或成员交叉验证签字。
+新增验证器测试在最新 CI 中全部通过。CI 使用 Ubuntu 22.04 和主解释器 Python 3.9，不能写成与鸿蒙 Python 版本一致的端到端比较。
 完整下载的解码日志副本在本机持久归档；来源、摘要与公开摘录见 [ci-summary.json](evidence/core-compatibility/2026-10-11/ci-summary.json)。
 上述 CI 绑定源码提交；本轮后续文档提交的 CI 状态需单独查看，不将其自动写成该次运行的一部分。
 
 固定 LiteX/Migen 的完整 Git bundle、约束及设备恢复步骤已整理为 [验证材料](member3-week2-handoff.md)。包的哈希和空目录恢复检查已完成，代码、报告、归档和待执行步骤均可审阅。
-未新增核心改动，因此没有为收尾重复运行本机核心测试。还需要成员的独立交叉验证和组长审核。
+未新增核心改动，因此没有为收尾重复运行本机核心测试。组长审核时在 Windows CPython 3.12.10 对提交 `2cd7d5eb4` 独立执行报告、权限探测、验收和比较测试，26/26 通过；该结果只作为脚本逻辑交叉复核，不替代鸿蒙原生 r2。
 
 ## 已有原生证据的复核边界
 
@@ -119,9 +119,9 @@ PYTHONUTF8=1 .venv-litex/bin/python -m litex.tools.litex_soc_gen \
 该命令当前是**待验证方案**，本轮未运行；所列参数已在本轮 soc_gen 的帮助输出中确认。执行前仍须核对 CPU/工具链条件；成功要以 BIOS ELF/bin 和完整构建日志为准，失败要保留准确阶段。
 条件不满足则保留 CONDITIONS_MISSING/NOT_RUN，不把从头移植 GCC 或 Verilator 加入本轮范围。
 
-## 收尾缺项
+## 收尾结论
 
-1. 在已取得的鸿蒙 PC 复跑新版宿主检查/执行器和 26 项报告测试，保留首次 FAIL；拒绝写入前提未建立时明确 BLOCKED。
-2. 真机探测已确认 Meson、RISC-V GCC 和三个数据包缺失，记录条件性未运行；只有环境补齐后才编译。
-3. 另一成员交叉验证本轮验证器与证据；一号确认最终版本/注释差异口径，并审核合并第二周 PR。
-4. 当前权限发现只需修正验证器前提，没有新增 litex/ 核心修改依据；真实 PermissionError 传播仍未在本原生会话验证。
+1. 鸿蒙 PC r2 已复跑新版宿主检查/执行器和 26 项报告测试；首次 FAIL 保留，拒绝写入前提未建立，最终明确为 BLOCKED。
+2. 真机探测确认 Meson、RISC-V GCC 和三个数据包缺失，固件保持条件性未运行；只有环境补齐后才编译。
+3. Windows CPython 3.12.10 已完成 26/26 独立脚本交叉复核；最新四组 Ubuntu CI 全部通过。
+4. 当前权限发现只需修正验证器前提，没有新增 `litex/` 核心修改依据；真实 PermissionError 传播仍未在本原生会话验证，此项作为已记录的平台环境限制，不写成 PASS。
