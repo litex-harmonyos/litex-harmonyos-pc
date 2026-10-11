@@ -49,11 +49,36 @@ def acceptance_complete(report):
 
 def host_probe_complete(report):
     """Keep actual failures and unexercised permissions distinct from PASS."""
+    return host_probe_status(report) == "PASS"
+
+
+def host_probe_status(report):
+    """An unavailable denied-write fixture is BLOCKED, never permission PASS."""
     expected = {"vcd_tempfile_and_cleanup", "builder_unicode_path_and_encoding",
                 "builder_write_permission", "filtered_subprocess_argv_and_exit"}
     checks = {item["name"]: item for item in report.get("checks", [])}
-    return (all(checks.get(name, {}).get("status") == "PASS" for name in expected) and
-            checks.get("builder_write_permission", {}).get("detail", {}).get("exercised") is True)
+    if any(checks.get(name, {}).get("status") != "PASS"
+           for name in expected - {"builder_write_permission"}):
+        return "FAIL"
+    permission = checks.get("builder_write_permission", {})
+    detail = permission.get("detail", {})
+    if (permission.get("status") == "PASS" and detail.get("exercised") is True and
+            detail.get("permission_error_propagated") is True and
+            detail.get("native_write") == detail.get("builder_write") == "DENIED"):
+        return "PASS"
+    if (permission.get("status") == "BLOCKED" and detail.get("exercised") is False and
+            detail.get("native_write") == detail.get("builder_write") == "ALLOWED" and
+            detail.get("reason")):
+        return "BLOCKED"
+    return "FAIL"
+
+
+def completion_status(native, status):
+    if status != "PASS":
+        if not native:
+            return "supplementary-validation-incomplete"
+        return "native-validation-" + ("blocked" if status == "BLOCKED" else "failed")
+    return "peer-review-pending" if native else "native-validation-pending"
 
 
 def read_json(path):
@@ -139,7 +164,7 @@ def main():
         "import json,litex,migen,litex.gen,litex.build,litex.soc; "
         "print(json.dumps({'litex':litex.__file__,'migen':migen.__file__}))"])
     run("compatibility-regressions", [python, "-m", "unittest", "-v", *TESTS])
-    run("host-probe", [python, str(ROOT / "docs/evidence/core-compatibility/2026-09-30/host_probe.py")])
+    host_step = run("host-probe", [python, str(ROOT / "scripts/probe_core_host.py")])
     run("harmonyos-example", [python, str(ROOT / "examples/harmonyos_minimal_soc.py"),
                               "--output-dir", str(output / "中文 空格"), "--clean"])
     run("wrapper-comparison", [python, str(ROOT / "scripts/compare_baseline.py"),
@@ -151,20 +176,27 @@ def main():
     probe = read_json(logs / "host-probe.log")
     report["acceptance_complete"] = acceptance_complete(acceptance)
     report["host_probe_complete"] = host_probe_complete(probe)
+    report["host_probe_status"] = host_probe_status(probe)
+    if host_step["returncode"] == 2 and report["host_probe_status"] == "BLOCKED":
+        host_step["status"] = "BLOCKED"
     report["firmware"] = firmware_conditions()
     report["serial"] = next((item for item in probe.get("checks", [])
                              if item["name"] == "serial_enumeration_only"), {"status": "NOT_RECORDED"})
     report["native_execution"] = args.scope == "native" and has_native_marker()
     passed = all(item["status"] == "PASS" for item in report["steps"] if item["required"])
+    other_passed = all(item["status"] == "PASS" for item in report["steps"]
+                       if item["required"] and item["name"] != "host-probe")
     report["status"] = "PASS" if passed and report["acceptance_complete"] and report["host_probe_complete"] else "FAIL"
-    report["week2_completion"] = "peer-review-pending" if report["native_execution"] else "native-validation-pending"
+    if other_passed and report["acceptance_complete"] and host_step["status"] == "BLOCKED":
+        report["status"] = "BLOCKED"
+    report["week2_completion"] = completion_status(report["native_execution"], report["status"])
     report["finished_at_utc"] = utc_now()
     files = {path.relative_to(output).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
              for path in sorted(output.rglob("*")) if path.is_file()}
     (output / "file-sha256.json").write_text(json.dumps(files, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (output / "report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"{args.scope}: {report['status']}; completion: {report['week2_completion']}")
-    return 0 if report["status"] == "PASS" else 1
+    return {"PASS": 0, "FAIL": 1, "BLOCKED": 2}[report["status"]]
 
 
 if __name__ == "__main__":

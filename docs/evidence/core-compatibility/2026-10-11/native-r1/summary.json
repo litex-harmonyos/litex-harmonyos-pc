@@ -1,0 +1,43 @@
+{
+  "source_commit": "a4929180c36004a272a2da2ed7dcec704cc24cc3",
+  "scope": "native",
+  "native_execution": true,
+  "original_report_status": "FAIL",
+  "acceptance_complete": true,
+  "host_probe_complete": false,
+  "original_archive_sha256": "b5a0227c99e29b851eb63b834cada00b78f2c06d38a0b0426e0b7838b2ea45a9",
+  "outer_files_verified": 52,
+  "runner_files_verified": 42,
+  "diagnostic_original_sha256": "77c95df1d89e2641af4b49abe745c5ee6f2342fd3eb6a96a90b1b255967a11be",
+  "required_core_tests_passed": 24,
+  "focused_regressions_passed": 30,
+  "cli_help_passed": 4,
+  "same_session_compared_artifacts_match": 8,
+  "comparison_is_cross_platform": false,
+  "firmware": {
+    "status": "CONDITIONS_MISSING",
+    "compiled": false,
+    "missing": [
+      "meson",
+      "RISC-V GCC",
+      "pythondata_software_picolibc",
+      "pythondata_software_compiler_rt",
+      "pythondata_cpu_picorv32"
+    ]
+  },
+  "permission_observation": "Both sampled locations retained 02771 after chmod(0500); plain Python and Builder both wrote successfully.",
+  "interpretation": "Historical denied-write fixture precondition was not established. No demonstrated Builder permission bypass. Native PermissionError propagation remains unexercised.",
+  "updated_probe_native_rerun": "PENDING",
+  "reporting_tests_native": "PENDING",
+  "fix_local_verification": {
+    "scope": "macOS supplementary",
+    "reporting_tests_passed": 26,
+    "runner_status": "PASS",
+    "native_execution": false,
+    "tested_worktree_parent": "b376668d18c891d273e134a703b25a931730172c",
+    "reporting_tests_log_sha256": "b64b554b88b83ac3336b2ca730cda09fa24d408346cd42d41420b186d9832d3a",
+    "runner_report_sha256": "305345f045a998b4b959993ecdfe190362e578b93f08b4c50b76363996dbcb49"
+  },
+  "peer_review": "PENDING",
+  "privacy": "Device/process metadata and native paths are retained locally; this summary publishes only test outcomes and file integrity references."
+}
