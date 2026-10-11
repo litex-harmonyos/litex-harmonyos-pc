@@ -1,0 +1,35 @@
+{
+  "captured_at_utc": "2026-10-11T02:24:26.117137+00:00",
+  "command": [
+    "<VENV>/bin/python",
+    "<WORKTREE>/scripts/run_acceptance.py",
+    "--output-dir",
+    "<RESULTS>/acceptance",
+    "--step-timeout",
+    "900.0"
+  ],
+  "working_directory": "<WORKTREE>",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "system": "Darwin",
+  "release": "25.5.0",
+  "machine": "arm64",
+  "python": "3.12.10 (main, May 30 2025, 05:53:56) [Clang 20.1.4 ]",
+  "python_executable": "<VENV>/bin/python",
+  "default_encoding": "utf-8",
+  "filesystem_encoding": "utf-8",
+  "preferred_encoding": "utf-8",
+  "litex_version": "2026.4",
+  "migen_version": "0.9.2",
+  "git_branch": "feature/core-compatibility",
+  "git_commit": "ea85022cfcc26fcd322d4548f95e4e103b148aa3",
+  "git_dirty": true,
+  "environment": {
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "TMPDIR": "<TEMP_ROOT>/",
+    "TEMP": null,
+    "TMP": null
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "source_commit": "2cd7d5eb43b73eab0fce3ea751e78e6d36494601",
+  "scope": "native",
+  "native_execution": true,
+  "report_status": "BLOCKED",
+  "runner_exit_code": 2,
+  "acceptance_complete": true,
+  "host_probe_complete": false,
+  "required_core_tests_passed": 24,
+  "focused_regressions_passed": 30,
+  "cli_help_passed": 4,
+  "same_session_compared_artifacts_match": 8,
+  "comparison_is_cross_platform": false,
+  "reporting_tests_passed": 26,
+  "permission_observation": {
+    "status": "BLOCKED",
+    "exercised": false,
+    "native_write": "ALLOWED",
+    "builder_write": "ALLOWED",
+    "observed_mode_after_chmod_0500": "02771",
+    "interpretation": "Denied-write precondition was not established; native PermissionError propagation remains unexercised."
+  },
+  "firmware": {
+    "status": "CONDITIONS_MISSING",
+    "compiled": false,
+    "missing": [
+      "meson",
+      "RISC-V GCC",
+      "pythondata_software_picolibc",
+      "pythondata_software_compiler_rt",
+      "pythondata_cpu_picorv32"
+    ]
+  },
+  "archive": {
+    "sha256": "3490f765d18cfbb27994dbbd9a4908c538b4660366ff98be41df12418dcaa14a",
+    "retained_by": "member-3",
+    "reviewer_received_raw_archive": false,
+    "reported_outer_files_verified": 96,
+    "reported_runner_files_verified": 42,
+    "reported_updated_source_files_verified": 4
+  },
+  "independent_review": {
+    "platform": "Windows",
+    "python": "3.12.10",
+    "reporting_tests_passed": 26,
+    "raw_native_archive_reverified": false
+  },
+  "review_decision": "The permission limitation is accepted as a documented BLOCKED environment precondition, not as a PASS."
+}

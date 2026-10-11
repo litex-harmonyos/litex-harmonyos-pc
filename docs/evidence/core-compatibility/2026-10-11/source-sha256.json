@@ -1,0 +1,11 @@
+{
+  "scripts/run_core_compatibility.py": "282409d6b32acc1f50001b9b3a58bd1c0120ca6592afb9a3ad2bc1890361f0a5",
+  "test/test_run_core_compatibility.py": "ee0fc91e6887dcfd9bffb4bda5e33721ae35608899ca16060da6f1aad13576eb",
+  "scripts/run_acceptance.py": "49205c558ee22308c3216ace8427fcddc13f4f091cc4e44fda241a9ff90c4e5c",
+  "scripts/compare_baseline.py": "d8d05c542b913fa87f91115615e76162c8db1af27b46eacbfae967d5cba8451f",
+  "examples/harmonyos_minimal_soc.py": "be3c053a29bbd4593aef212730e1bf48beeb3c08c90f4797572e0b2e9b020674",
+  "examples/minimal_soc_baseline.py": "c5ac890924e189ea85b893ba5b98c07a9bbce53b16ea279cf2712a1daa2aaad2",
+  "litex/soc/interconnect/stream.py": "d940ec72eb860ec6c77881f2b3ea7658f5d14034f9f893ac7a71c89aeeba9b55",
+  "litex/build/pmod.py": "4d6cf64dbf1e6cdb0d17210ff3e8b976d092e297b877c54999c406823826d99d",
+  "test/build/test_generic_platform_toolchain.py": "a1ba7d3ca0f76a3110c48ebf91f2e9e6eb809ed9cb5546a6829973f0022eb6e9"
+}

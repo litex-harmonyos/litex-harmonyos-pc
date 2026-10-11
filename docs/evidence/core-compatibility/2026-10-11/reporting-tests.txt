@@ -1,0 +1,38 @@
+test_acceptance_rejects_empty_or_skipped_reports (test.test_run_core_compatibility.TestCoreCompatibilityReport.test_acceptance_rejects_empty_or_skipped_reports) ... ok
+test_acceptance_requires_actual_required_steps (test.test_run_core_compatibility.TestCoreCompatibilityReport.test_acceptance_requires_actual_required_steps) ... ok
+test_existing_evidence_is_not_overwritten (test.test_run_core_compatibility.TestCoreCompatibilityReport.test_existing_evidence_is_not_overwritten) ... ok
+test_native_request_on_other_host_is_refused (test.test_run_core_compatibility.TestCoreCompatibilityReport.test_native_request_on_other_host_is_refused) ... ok
+test_permission_probe_must_have_exercised_the_check (test.test_run_core_compatibility.TestCoreCompatibilityReport.test_permission_probe_must_have_exercised_the_check) ... ok
+test_environment_report_contains_reproduction_metadata (test.test_run_acceptance.TestRunAcceptance.test_environment_report_contains_reproduction_metadata) ... ok
+test_optional_spawn_failure_does_not_become_required (test.test_run_acceptance.TestRunAcceptance.test_optional_spawn_failure_does_not_become_required) ... ok
+test_required_spawn_failure_is_logged (test.test_run_acceptance.TestRunAcceptance.test_required_spawn_failure_is_logged) ... ok
+test_timeout_is_reported_with_a_log (test.test_run_acceptance.TestRunAcceptance.test_timeout_is_reported_with_a_log) ... ok
+test_csr_address_change_is_a_difference (test.test_compare_baseline.TestBaselineComparison.test_csr_address_change_is_a_difference) ... ok
+test_different_clock_configuration_does_not_match (test.test_compare_baseline.TestBaselineComparison.test_different_clock_configuration_does_not_match) ... ok
+test_git_revision_is_not_a_timestamp (test.test_compare_baseline.TestBaselineComparison.test_git_revision_is_not_a_timestamp) ... ok
+test_hdl_logic_and_memory_changes_are_not_ignored (test.test_compare_baseline.TestBaselineComparison.test_hdl_logic_and_memory_changes_are_not_ignored) ... ok
+test_invalid_json_is_rejected_even_in_identical_files (test.test_compare_baseline.TestBaselineComparison.test_invalid_json_is_rejected_even_in_identical_files) ... ok
+test_json_key_order_banner_time_and_line_endings_can_differ (test.test_compare_baseline.TestBaselineComparison.test_json_key_order_banner_time_and_line_endings_can_differ) ... ok
+test_missing_required_file_on_both_sides_is_invalid (test.test_compare_baseline.TestBaselineComparison.test_missing_required_file_on_both_sides_is_invalid) ... ok
+test_modified_file_with_stale_manifest_is_invalid (test.test_compare_baseline.TestBaselineComparison.test_modified_file_with_stale_manifest_is_invalid) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.374s
+
+OK
+
+== missing-optional ==
+<TEMP_ROOT>/tmp88q8gstp/does-not-exist
+OPTIONAL_FAIL (0.00s), log: <TEMP_ROOT>/tmp88q8gstp/missing-optional.log
+Unable to start command: FileNotFoundError: [Errno 2] No such file or directory: '<TEMP_ROOT>/tmp88q8gstp/does-not-exist'
+
+== missing-command ==
+<TEMP_ROOT>/tmp9i5rvqwt/does-not-exist
+FAIL (0.00s), log: <TEMP_ROOT>/tmp9i5rvqwt/missing-command.log
+Unable to start command: FileNotFoundError: [Errno 2] No such file or directory: '<TEMP_ROOT>/tmp9i5rvqwt/does-not-exist'
+
+== timeout ==
+<VENV>/bin/python slow.py
+FAIL (0.00s), log: <TEMP_ROOT>/tmpgc3a4a_i/timeout.log
+partial output
+Timed out after 1 seconds.

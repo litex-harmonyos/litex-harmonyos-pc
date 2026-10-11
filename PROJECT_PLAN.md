@@ -32,7 +32,7 @@ portable core tests, and export-only minimal SoC generation on HarmonyOS PC.
 |---|---|---|---|
 | 1 - lead/integration | `feature/baseline-integration` | baseline, core flow, minimal SoC, acceptance runner | PR #2 merged; PR #8 native final acceptance complete 2026-10-10 |
 | 2 - environment/dependencies | `feature/harmony-environment` | environment probe, dependency matrix, setup instructions | PR #1 merged 2026-10-07 |
-| 3 - core compatibility | `feature/core-compatibility` | platform audit, minimal fixes, compatibility notes | PR #4 merged 2026-10-07 |
+| 3 - core compatibility | `feature/core-compatibility` | platform audit, minimal fixes, compatibility notes | PR #4 merged; PR #9 source 2cd7d5eb4 passed all four CI jobs; native r2 core/CLI/generation and 26 reporting tests passed; denied-write fixture unavailable and correctly reported BLOCKED; firmware conditions missing; independent Windows review 26/26 passed |
 | 4 - tests/documentation | `feature/tests-docs`; `feature/final-acceptance` | HarmonyOS test results, comparisons, report structure | PR #3 merged; integrated native/Windows validation complete 2026-10-08; follow-up evidence awaits review |
 
 All feature branches submit pull requests to `port/harmonyos-pc`. The `master`

@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-10-11T02:25:54.049103+00:00",
+  "source_commit": "ea85022cfcc26fcd322d4548f95e4e103b148aa3",
+  "native_tested_commit": "fe3261f0e8becf83018fc387416fa1be321708b8",
+  "native_core_and_baseline_code_changes": [],
+  "archived_native_bundle_sha256": "4d2efcfac60bb731de245c175c21e81753133610ae30a17c54fd3b5ddee94938",
+  "archived_file_hashes_verified": 95,
+  "latest_18_file_lead_bundle_retrieved": false,
+  "migen_commit": "4c2ae8dfeea37f235b52acb8166f12acaaae4f7c",
+  "installed_migen_python_files_match_fixed_source": 136,
+  "native_device_status": "unavailable; user confirmed no HarmonyOS PC",
+  "host_type": "macOS supplementary; not project Windows/Linux reference"
+}

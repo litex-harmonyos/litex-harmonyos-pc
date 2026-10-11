@@ -1,0 +1,68 @@
+{
+  "captured_at_utc": "2026-10-11T02:24:26.117137+00:00",
+  "command": [
+    "<VENV>/bin/python",
+    "<WORKTREE>/scripts/run_acceptance.py",
+    "--output-dir",
+    "<RESULTS>/acceptance",
+    "--step-timeout",
+    "900.0"
+  ],
+  "working_directory": "<WORKTREE>",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "system": "Darwin",
+  "release": "25.5.0",
+  "machine": "arm64",
+  "python": "3.12.10 (main, May 30 2025, 05:53:56) [Clang 20.1.4 ]",
+  "python_executable": "<VENV>/bin/python",
+  "default_encoding": "utf-8",
+  "filesystem_encoding": "utf-8",
+  "preferred_encoding": "utf-8",
+  "litex_version": "2026.4",
+  "migen_version": "0.9.2",
+  "git_branch": "feature/core-compatibility",
+  "git_commit": "ea85022cfcc26fcd322d4548f95e4e103b148aa3",
+  "git_dirty": true,
+  "environment": {
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "TMPDIR": "<TEMP_ROOT>/",
+    "TEMP": null,
+    "TMP": null
+  }
+}
+
+== pip-check ==
+<VENV>/bin/python -m pip check
+PASS (0.09s), log: <RESULTS>/acceptance/logs/pip-check.log
+
+== imports ==
+<VENV>/bin/python -c 'import litex, migen; print('"'"'LiteX and Migen import OK'"'"')'
+PASS (0.05s), log: <RESULTS>/acceptance/logs/imports.log
+
+== litex-cli-help ==
+<VENV>/bin/python -m litex.tools.litex_client --help
+PASS (0.05s), log: <RESULTS>/acceptance/logs/litex-cli-help.log
+
+== litex-sim-help ==
+<VENV>/bin/python -m litex.tools.litex_sim --help
+OPTIONAL_FAIL (0.23s), log: <RESULTS>/acceptance/logs/litex-sim-help.log
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<WORKTREE>/litex/tools/litex_sim.py", line 33, in <module>
+    from liteeth.common             import *
+ModuleNotFoundError: No module named 'liteeth'
+
+== portable-core-tests ==
+<VENV>/bin/python -m unittest -v test.cores.test_code_8b10b test.cores.test_ecc test.soc.test_export
+PASS (10.34s), log: <RESULTS>/acceptance/logs/portable-core-tests.log
+
+== minimal-soc ==
+<VENV>/bin/python <WORKTREE>/examples/minimal_soc_baseline.py --output-dir <RESULTS>/acceptance/minimal-soc --clean
+PASS (0.29s), log: <RESULTS>/acceptance/logs/minimal-soc.log
+
+Acceptance: PASS (5/5 required steps passed; 5/6 total steps passed)
+Report: <RESULTS>/acceptance/acceptance-report.json

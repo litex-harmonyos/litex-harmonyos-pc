@@ -1,0 +1,110 @@
+==============================================================================
+ LiteX @ HarmonyOS PC 环境检测报告   模式: 快速（未测网络/Git 远端/venv 实测/工具版本）
+ 时间: 2026-10-11 10:24:26
+==============================================================================
+
+--- 系统 ---
+[INFO] platform.system                    Darwin
+[INFO] platform.release                   25.5.0
+[INFO] platform.version                   Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:22 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8132
+[INFO] platform.machine                   arm64
+[INFO] platform.processor                 arm
+[INFO] sys.platform                       darwin
+[INFO] /etc/os-release                    不存在（非标准 Linux/OpenHarmony 布局）
+[WARN] 鸿蒙特征识别                             未命中 OpenHarmony/HarmonyOS 关键字；若当前确为鸿蒙 PC，请将上方原始值发回群里确认检测规则（勿改用虚拟机/容器验证）
+[INFO] SHELL 环境变量                         /bin/zsh
+[INFO] TERM 环境变量                          dumb
+[INFO] TERM_PROGRAM                       未设置
+[INFO] 终端 isatty(stdin/stdout)            stdin=False stdout=False
+[INFO] 终端尺寸                               无法获取（非交互终端）
+
+--- Python ---
+[OK  ] 解释器版本 (需 >=3.7)                    3.12.10 (CPython)
+[INFO] sys.executable                     <VENV>/bin/python
+[INFO] 是否虚拟环境                             是 (<VENV>)
+[WARN] PEP 668 外部管理标记                     存在 <PYTHON_RUNTIME>/cpython-3.12.10-macos-aarch64-none/lib/python3.12/EXTERNALLY-MANAGED：系统 pip 受保护，必须使用 venv（litex_setup.py 会直接拒绝安装）
+[OK  ] pip 可用性                            pip 26.2.1 from <VENV>/lib/python3.12/site-packages/pip (python 3.12)
+[OK  ] venv 模块可导入                         已内置
+[INFO] site-packages 路径                   <VENV>/lib/python3.12/site-packages
+[INFO] 可执行脚本目录                            <VENV>/bin
+
+--- 编码与字符集 ---
+[INFO] 文件系统编码                             utf-8
+[INFO] 区域首选编码                             utf-8
+[INFO] stdout 编码                          utf-8
+[OK  ] 控制台中文输出                            stdout 编码可表示中文与全角符号（未直接打印，避免污染报告）
+[OK  ] UTF-8 文件名读写                        创建/读取中文名文件成功
+
+--- 文件系统能力 ---
+[INFO] 路径分隔符                              os.sep='/' os.pathsep=':'
+[INFO] 临时目录                               <TEMP_ROOT>
+[INFO] HOME                               <USER_HOME>
+[OK  ] 临时目录写入                             <TEMP_ROOT>
+[INFO] 文件名大小写                             不敏感（Windows 行为）
+[OK  ] 符号链接                               可用
+[OK  ] 硬链接                                可用
+[OK  ] 可执行位 (chmod +x 后可直接运行)             LXEXEC-OK
+[OK  ] 255 字节文件名                          255 字节 ASCII 组件名可创建
+[OK  ] 长路径（嵌套 8 层 + 180 字符文件名）            总长 301 字符
+[OK  ] HOME 目录可写                          <USER_HOME>
+
+--- 子进程能力 ---
+[OK  ] 基本子进程 (python -c)                  LXSUB-OK
+[OK  ] 环境变量继承                             1
+[OK  ] 工作目录指定 (cwd 参数)                    /private<TEMP_ROOT>
+[OK  ] shell 子进程 (sh -c)                  LXSH-OK
+
+--- Git ---
+[OK  ] git 可执行文件                          git version 2.50.0 (/opt/homebrew/bin/git)
+[SKIP] git 远端连通性                          --full 模式检测
+
+--- 网络连通性 ---
+[SKIP] HTTP(S) 访问                         --full 模式检测
+
+--- 外部工具 ---
+[INFO] C/C++ 编译器/cc                       /usr/bin/cc
+[INFO] C/C++ 编译器/gcc                      /usr/bin/gcc
+[INFO] C/C++ 编译器/clang                    /usr/bin/clang
+[INFO] 构建系统/make                          /usr/bin/make
+[SKIP] 构建系统/ninja                         未安装（扩展验收（litex_sim / 固件））
+[SKIP] 构建系统/meson                         未安装（扩展验收（litex_sim / 固件））
+[SKIP] 构建系统/cmake                         未安装（扩展验收（可选））
+[SKIP] 仿真 / HDL 工具/verilator              未安装（扩展验收（litex_sim））
+[SKIP] 仿真 / HDL 工具/iverilog               未安装（扩展验收（可选仿真））
+[SKIP] 仿真 / HDL 工具/yosys                  未安装（扩展验收（FPGA 综合，非首期））
+[SKIP] RISC-V 交叉工具链/riscv64-unknown-elf-gcc 未安装（扩展验收（BIOS/固件编译））
+[SKIP] RISC-V 交叉工具链/riscv64-elf-gcc       未安装（扩展验收（BIOS/固件编译））
+[SKIP] RISC-V 交叉工具链/riscv32-unknown-elf-gcc 未安装（扩展验收（BIOS/固件编译））
+
+--- Python 依赖 ---
+[OK  ] migen                              0.9.2 —— HDL 生成引擎（litex/gen 全面依赖）
+[OK  ] packaging                          26.3 —— builder.py 版本比较（litex/soc/integration/builder.py:22）
+[OK  ] pyserial                           3.5 —— litex_term / UART 远程（litex/tools/litex_term.py:16）
+[OK  ] requests                           2.34.2 —— 远程烧写懒加载（litex/build/generic_programmer.py:52）
+[OK  ] setuptools                         84.0.0 —— 安装/构建（litex_setup.py:628）
+[OK  ] wheel                              0.48.0 —— 安装/构建（litex_setup.py:630）
+[WARN] pexpect                            未安装（构建/扩展：交互式终端自动化（extras: develop）；安装流程完成后本项应变为 OK）
+[WARN] meson                              未安装（构建/扩展：litex_sim C 仿真构建（扩展验收）；安装流程完成后本项应变为 OK）
+
+--- 仓库基线 ---
+[INFO] 仓库根目录                              <WORKTREE>
+[INFO] 当前 commit                          ea85022cfcc26fcd322d4548f95e4e103b148aa3 (feature/core-compatibility)
+[INFO] 工作区状态                              有未提交修改（2 行）
+[INFO] LiteX 版本 (setup.py)                2026.04
+[INFO] Migen 基线 SHA1 (litex_repos.py)     4c2ae8dfeea37f235b52acb8166f12acaaae4f7c
+
+==============================================================================
+ 核心必达能力汇总
+==============================================================================
+[OK  ] Python/解释器版本 (需 >=3.7)             3.12.10 (CPython)
+[OK  ] Python/pip 可用性                     pip 26.2.1 from <VENV>/lib/python3.12
+[OK  ] 文件系统能力/临时目录写入                      <TEMP_ROOT>
+[OK  ] 文件系统能力/可执行位 (chmod +x 后可直接运行)      LXEXEC-OK
+[OK  ] 子进程能力/基本子进程 (python -c)            LXSUB-OK
+[OK  ] Git/git 可执行文件                      git version 2.50.0 (/opt/homebrew/bin/git)
+[SKIP] 网络连通性/HTTP(S) 访问                   --full 模式检测
+
+未发现 FAIL；另有 1 项需 --full 模式补测（网络/Git 远端/venv 实测等）。
+
+合计: 70 项 | OK=23 WARN=4 FAIL=0 SKIP=11 INFO=32
+JSON 报告已写入: <RESULTS>/environment-probe.json
