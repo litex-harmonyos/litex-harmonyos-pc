@@ -1,0 +1,1 @@
+{"litex": "<WORKTREE>/litex/__init__.py", "migen": "<VENV>/lib/python3.12/site-packages/migen/__init__.py"}
