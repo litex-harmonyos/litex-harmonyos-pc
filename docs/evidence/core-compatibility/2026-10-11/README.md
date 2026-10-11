@@ -2,6 +2,7 @@
 
 2026-10-11，Codex 按三号成员授权在 macOS 26.5.2 arm64、CPython 3.12.10 上执行。
 **本目录没有本轮鸿蒙真机运行；用户确认当前没有鸿蒙 PC。第二周完成状态为 native-validation-pending。**
+后续用户反馈新增虚拟机无法执行测试，继续先完成无需设备部分；未取得该虚拟机的失败日志。
 
 ## 输入与结果
 
@@ -45,3 +46,10 @@ ZIP 包含 58 个经哈希检查的原始文件及 archive-sha256.json：完整�
 设备可用后，按 [第二周记录](../../../core-compatibility-week2.md) 在固定环境执行原生入口，使用新的结果目录。
 原生入口拒绝无鸿蒙平台标记的 native 范围；标记是误用防护，操作者仍需提供实际设备与原生会话来源。
 随后由另一成员交叉验证，组长确认跨平台差异口径并审核 PR。
+
+## 不需设备的后续收尾
+
+源码提交 a4929180c 的四组 Ubuntu CI 全部成功，新增验证器 5 项测试均明确通过；[ci-summary.json](ci-summary.json) 和 [日志摘录](ci-excerpts.log.txt) 记录实际合并测试提交与分组结果。
+四份完整下载的解码日志副本及哈希另存本机 build/member3-week2-ci-20261011.zip；它们不属于前述原始本机运行 ZIP，也不等于原始 HTTP ZIP 字节。
+[固定版本材料说明](../../../member3-week2-handoff.md) 与 [handoff-manifest.json](handoff-manifest.json) 提供源代码 bundle、约束、包摘要和空目录恢复检查。
+补充公开文件的哈希列在 manifest.json 的 supplemental_public_files，保留原 36 份公开副本与原始归档映射。

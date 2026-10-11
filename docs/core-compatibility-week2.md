@@ -7,7 +7,7 @@ Migen 固定为 `4c2ae8dfeea37f235b52acb8166f12acaaae4f7c`，不能用同版本�
 
 本轮完成已有兼容修改复核、本机 CPython 3.12.10 旁证、一次性验证入口及证据整理；没有发现需要新增 LiteX 核心补丁的失败。
 **三号第二周尚未全部完成：目前没有可用鸿蒙 PC，原生复测、当前真机工具链探测及组员交叉验证仍待执行。**
-HDC 查询为空，用户已明确当前没有鸿蒙 PC。本机结果限定为 macOS 旁证，不作为分工要求的 Windows/Linux 参考运行或鸿蒙真机运行。
+初次 HDC 查询为空；用户随后提供的虚拟机无法执行测试，已明确先完成不需鸿蒙 PC 的部分。未取得虚拟机失败日志，原因未定位。目前没有可执行本轮原生验证的环境。本机结果限定为 macOS 旁证，不作为分工要求的 Windows/Linux 参考运行或鸿蒙真机运行。
 
 ## 对应六项任务
 
@@ -54,6 +54,25 @@ HDC 查询为空，用户已明确当前没有鸿蒙 PC。本机结果限定为 
 | 可选仿真 | LiteEth 缺失，OPTIONAL_FAIL；未执行 Verilator |
 
 实际命令、报告、原始/脱敏哈希见 [2026-10-11 证据](evidence/core-compatibility/2026-10-11/README.md)。
+
+## 不依赖设备的收尾
+
+[PR #9](https://github.com/litex-harmonyos/litex-harmonyos-pc/pull/9) 已提交为草稿，源码提交 `a4929180c36004a272a2da2ed7dcec704cc24cc3`。
+该源码的 [四组 Ubuntu CI](https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38105516202) 全部成功；实际检出的是与集成分支合并的测试提交 `d2ac98407fa72264d001ad74f95d4ffd028169e3`。
+
+| CI 组 | pytest 主分组结果 |
+| --- | --- |
+| 1 | 372 passed、1 skipped；另有独立 QEMU 协同仿真步骤成功 |
+| 2 | 402 passed |
+| 3 | 367 passed、1 skipped |
+| 4 | 382 passed、1 skipped |
+
+新增验证器 5 项测试在组 2/3/4 的日志中明确全部通过。CI 使用 Ubuntu 22.04 和主解释器 Python 3.9，不能写成与鸿蒙 Python 版本一致的端到端比较或成员交叉验证签字。
+完整下载的解码日志副本在本机持久归档；来源、摘要与公开摘录见 [ci-summary.json](evidence/core-compatibility/2026-10-11/ci-summary.json)。
+上述 CI 绑定源码提交；本轮后续文档提交的 CI 状态需单独查看，不将其自动写成该次运行的一部分。
+
+固定 LiteX/Migen 的完整 Git bundle、约束及设备恢复步骤已整理为 [验证材料](member3-week2-handoff.md)。包的哈希和空目录恢复检查已完成，代码、报告、归档和待执行步骤均可审阅。
+未新增核心改动，因此没有为收尾重复运行本机核心测试。还需要成员的独立交叉验证和组长审核。
 
 ## 已有原生证据的复核边界
 

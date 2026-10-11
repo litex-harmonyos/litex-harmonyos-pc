@@ -1,0 +1,71 @@
+{
+  "run_id": 38105516202,
+  "run_url": "https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38105516202",
+  "status": "completed",
+  "conclusion": "success",
+  "pr_number": 9,
+  "head_commit": "a4929180c36004a272a2da2ed7dcec704cc24cc3",
+  "tested_merge_commit": "d2ac98407fa72264d001ad74f95d4ffd028169e3",
+  "base_commit": "ea85022cfcc26fcd322d4548f95e4e103b148aa3",
+  "environment": "Ubuntu 22.04 GitHub Actions; main LiteX interpreter Python 3.9; additional Python 3.13 for Coreblocks",
+  "native_harmonyos": false,
+  "python_version_matched_to_harmonyos": false,
+  "all_five_new_runner_tests_passed": true,
+  "jobs": [
+    {
+      "job_id": 114370096404,
+      "group": 3,
+      "status": "completed",
+      "conclusion": "success",
+      "job_url": "https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38105516202/job/114370096404",
+      "pytest_summary": "2026-10-11T02:47:49.1953388Z ================== 367 passed, 1 skipped in 573.77s (0:09:33) ==================",
+      "new_tests_passed": [
+        "test/test_run_core_compatibility.py::TestCoreCompatibilityReport::test_acceptance_requires_actual_required_steps",
+        "test/test_run_core_compatibility.py::TestCoreCompatibilityReport::test_permission_probe_must_have_exercised_the_check"
+      ],
+      "checkout_commit": "d2ac98407fa72264d001ad74f95d4ffd028169e3"
+    },
+    {
+      "job_id": 114370096500,
+      "group": 4,
+      "status": "completed",
+      "conclusion": "success",
+      "job_url": "https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38105516202/job/114370096500",
+      "pytest_summary": "2026-10-11T02:46:49.1544928Z ================== 382 passed, 1 skipped in 557.86s (0:09:17) ==================",
+      "new_tests_passed": [
+        "test/test_run_core_compatibility.py::TestCoreCompatibilityReport::test_existing_evidence_is_not_overwritten",
+        "test/test_run_core_compatibility.py::TestCoreCompatibilityReport::test_native_request_on_other_host_is_refused"
+      ],
+      "checkout_commit": "d2ac98407fa72264d001ad74f95d4ffd028169e3"
+    },
+    {
+      "job_id": 114370096529,
+      "group": 2,
+      "status": "completed",
+      "conclusion": "success",
+      "job_url": "https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38105516202/job/114370096529",
+      "pytest_summary": "2026-10-11T02:55:50.7583530Z ======================= 402 passed in 1022.91s (0:17:02) =======================",
+      "new_tests_passed": [
+        "test/test_run_core_compatibility.py::TestCoreCompatibilityReport::test_acceptance_rejects_empty_or_skipped_reports"
+      ],
+      "checkout_commit": "d2ac98407fa72264d001ad74f95d4ffd028169e3"
+    },
+    {
+      "job_id": 114370096576,
+      "group": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "job_url": "https://github.com/litex-harmonyos/litex-harmonyos-pc/actions/runs/38105516202/job/114370096576",
+      "pytest_summary": "2026-10-11T02:53:06.4911654Z ================== 372 passed, 1 skipped in 608.75s (0:10:08) ==================",
+      "new_tests_passed": [],
+      "checkout_commit": "d2ac98407fa72264d001ad74f95d4ffd028169e3"
+    }
+  ],
+  "log_note": "Full downloaded decoded log copies are stored locally in build/member3-week2-ci-20261011. Public excerpts preserve checkout and test result lines; they are not full logs.",
+  "local_decoded_log_archive": {
+    "path": "<LOCAL_REPOSITORY>/build/member3-week2-ci-20261011.zip",
+    "sha256": "479552982c6750be115133243c593e5f8a2683610ebd90939f8a9e3d76cfee8d",
+    "files": 4,
+    "note": "Decoded text copies; not original HTTP ZIP bytes."
+  }
+}

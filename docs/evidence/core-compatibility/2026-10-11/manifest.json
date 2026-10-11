@@ -196,5 +196,19 @@
     "/private<TEMP_ROOT>",
     "<TEMP_ROOT>"
   ],
-  "note": "Public hashes cover redacted copies. Execution file-sha256.json covers original result files before report.json/manifest/source audit were added. ZIP archive-sha256.json covers all archived raw files except itself."
+  "note": "Public hashes cover redacted copies. Execution file-sha256.json covers original result files before report.json/manifest/source audit were added. ZIP archive-sha256.json covers all archived raw files except itself.",
+  "supplemental_public_files": {
+    "ci-summary.json": {
+      "sha256": "b893d15286c74437541ce810d938e5abfaffd40f211fd22ae70d5af354187220",
+      "note": "2026-10-11 closeout; separate from original local run archive"
+    },
+    "ci-excerpts.log.txt": {
+      "sha256": "e11e657daf2b0a4d8f1fcdc20fbc69a49f155de7094404b5009f75bf25ecf611",
+      "note": "2026-10-11 closeout; separate from original local run archive"
+    },
+    "handoff-manifest.json": {
+      "sha256": "03a06d1b879ad47cd326af4bff3c12a3d5db8fdd5de9cfb4f4492a7911095fdb",
+      "note": "2026-10-11 closeout; separate from original local run archive"
+    }
+  }
 }
